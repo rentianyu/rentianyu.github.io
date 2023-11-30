@@ -5,12 +5,12 @@
         <description>Linux - 分类 - 小贝塔教程资源</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
             <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Thu, 30 Nov 2023 15:44:18 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/linux/" rel="self" type="application/rss+xml" /><item>
-    <title>Linux定时任务之crontab</title>
+    <title>Linux 定时任务之 crontab</title>
     <link>https://example.com/001_crontab/</link>
     <pubDate>Thu, 30 Nov 2023 15:44:18 &#43;0800</pubDate>
     <author>小贝塔</author>
     <guid>https://example.com/001_crontab/</guid>
-    <description><![CDATA[<h1 id="linux定时任务之crontab"><code>Linux</code>定时任务之<code>crontab</code></h1>
+    <description><![CDATA[<h1 id="linux-定时任务之-crontab"><strong>Linux</strong> 定时任务之 <strong>crontab</strong></h1>
 <h2 id="1-crontab一般用法crontab-e">1. <code>crontab</code>一般用法，<code>crontab –e</code></h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
