@@ -1,0 +1,181 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Linux - 分类 - 小贝塔教程资源</title>
+        <link>https://example.com/categories/linux/</link>
+        <description>Linux - 分类 - 小贝塔教程资源</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
+            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Thu, 30 Nov 2023 15:44:18 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux定时任务之crontab</title>
+    <link>https://example.com/001_crontab/</link>
+    <pubDate>Thu, 30 Nov 2023 15:44:18 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/001_crontab/</guid>
+    <description><![CDATA[<h1 id="linux定时任务之crontab">Linux定时任务之crontab</h1>
+<h2 id="1-crontab一般用法crontab-e">1. <code>crontab</code>一般用法，<code>crontab –e</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 重启cron服务</span>
+</span></span><span class="line"><span class="cl">service cron restart
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 编辑定时任务（重启cron服务才会生效）</span>
+</span></span><span class="line"><span class="cl">crontab –e
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启cron服务,这可能重启一个就行，不放心的话都执行</span>
+</span></span><span class="line"><span class="cl">service cron restart
+</span></span><span class="line"><span class="cl">systemctl restart cron
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出定时任务</span>
+</span></span><span class="line"><span class="cl">crontab –l
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 配置文件解读及示例</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># minute hour day month week command</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  分    时   日   月    周   命令</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 举例如下</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 实在不会，记得是看Crontab表达式：https://www.toolnb.com/tools/croncreate.html</span>
+</span></span><span class="line"><span class="cl">* * * * * sh /root/hello.sh  <span class="c1"># 每1分钟执行 sh /root/hello.s</span>
+</span></span><span class="line"><span class="cl">*/10 * * * * sh /root/hello.sh  <span class="c1"># 每10分钟</span>
+</span></span><span class="line"><span class="cl">* */2 * * * sh /root/hello.sh  <span class="c1"># 每2小时</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span> <span class="m">8</span> * * * sh /root/hello.sh  <span class="c1"># 每天8点0分</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span> 8,9,10 * * * sh /root/hello.sh  <span class="c1"># 每天8、9、10点</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span> 8-10 * * * sh /root/hello.sh  <span class="c1"># 每天8、9、10点</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span> 8-20/3 * * * sh /root/hello.sh  <span class="c1"># 每天8-20点中，每3小时执行一次</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 特殊的：开机触发</span>
+</span></span><span class="line"><span class="cl">@reboot sh /root/hello.sh  <span class="c1"># 开机执行</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="2-crontab高级用法crontab-配置文件">2. <code>crontab</code>高级用法，<code>crontab 配置文件</code></h2>
+<ul>
+<li><code>crontab -e</code> 其实是生成了个配置文件，我们也可以创建一个 <code>crontab</code>配置文件</li>
+<li>这个配置文件，简单来说是个脚本，可以设置 <code>shebang</code>、环境变量、指定用户，不过这几个都可不写</li>
+<li>允许一些简单的 <code>shell</code>语法</li>
+<li>举例一下配置文件，前两行可以不要</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/env bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 开机触发</span>
+</span></span><span class="line"><span class="cl">@reboot wx <span class="s2">&#34;PVE 开机了！&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># PVE</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#5 8 * * * qm start 101</span>
+</span></span><span class="line"><span class="cl"><span class="m">58</span> <span class="m">23</span> * * * /usr/sbin/shutdown -h now
+</span></span><span class="line"><span class="cl"><span class="m">56</span> <span class="m">23</span> * * * /usr/sbin/qm list <span class="p">|</span> grep -q <span class="s2">&#34;101.*running&#34;</span> <span class="o">&amp;&amp;</span> /usr/sbin/qm shutdown <span class="m">101</span>
+</span></span><span class="line"><span class="cl"><span class="m">54</span> <span class="m">23</span> * * * /usr/sbin/qm list <span class="p">|</span> grep -q <span class="s2">&#34;102.*running&#34;</span> <span class="o">&amp;&amp;</span> /usr/sbin/qm <span class="nb">suspend</span> <span class="m">102</span> --todisk
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 更新ydns</span>
+</span></span><span class="line"><span class="cl"><span class="m">10</span> * * * * bash /root/sh/ydns.sh &gt; /dev/null
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 更新crontab</span>
+</span></span><span class="line"><span class="cl"><span class="m">30</span> <span class="m">8</span> * * * /usr/bin/crontab ~/sh/cron.list <span class="o">&amp;&amp;</span> /usr/sbin/service cron restart <span class="o">&amp;&amp;</span> /usr/bin/systemctl restart cron
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>使用方法：</p>
+<ul>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> <span class="c1"># 设置配置文件</span>
+</span></span><span class="line"><span class="cl">crontab ~/sh/cron.list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 重启cron服务,这可能重启一个就行，不放心的话都执行</span>
+</span></span><span class="line"><span class="cl">service cron restart
+</span></span><span class="line"><span class="cl">systemctl restart cron
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3-一些坑">3. 一些坑</h2>
+<ol>
+<li>一般来讲，<code>crontab</code>的前边时间的表达式就只有5位，除非你懂，否则别整花里胡哨的</li>
+<li>如果没有导入环境变量(<code>export PATH</code>)，一些命令就要用绝对路径，比如：<code>/usr/sbin/service cron restart</code></li>
+<li>修改完配置文件后一定要重启一下服务</li>
+<li>有一些系统抽风，按常规方法改了也不生效，就得去改动 <code>cron</code>相关的底层文件</li>
+</ol>
+<div>
+<div style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
+<h5>「感谢支持」</h5>
+<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+<span>赞赏</span></button>
+<div id="QR" style="display: none;">
+<div id="wechat" style="display: inline-block">
+<a class="fancybox" rel="group">
+</a>
+<h3>微信赞赏</h3>
+</div>
+<div id="alipay" style="display: inline-block">
+<a class="fancybox" rel="group">
+</a>
+<h3>支付宝赞赏</h3>
+</div>
+</div>
+</div>
+]]></description>
+</item>
+</channel>
+</rss>
