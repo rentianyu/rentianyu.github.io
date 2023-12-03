@@ -47,7 +47,7 @@ crontab –l
 - 允许一些简单的 `shell`语法
 - 举例一下配置文件，前两行可以不要
 
-```
+```bash
 #!/bin/env bash
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
@@ -80,7 +80,9 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     systemctl restart cron
     ```
 
-<img src="./assets/crontab_cheatsheet.png" alt="crontab_cheatsheet" style="zoom:50%;" />
+---
+
+![./assets/crontab_cheatsheet.png](./assets/crontab_cheatsheet.png)
 
 ---
 
