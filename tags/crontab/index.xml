@@ -12,6 +12,9 @@
     <guid>https://example.com/001_crontab/</guid>
     <description><![CDATA[<h1 id="linux-定时任务之-crontab"><strong>Linux</strong> 定时任务之 <strong>crontab</strong></h1>
 <h2 id="1-crontab一般用法crontab-e">1. <code>crontab</code>一般用法，<code>crontab –e</code></h2>
+<ul>
+<li><code>crontab -e</code> 第一次用会选择一下编辑器，<code>vim</code>还是<code>nano</code>自己看着来</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -149,6 +152,7 @@
 </ul>
 </li>
 </ul>
+
 <hr>
 <h2 id="3-一些坑">3. 一些坑</h2>
 <ol>

@@ -4,6 +4,8 @@
 
 ## 1. `crontab`一般用法，`crontab –e`
 
+- `crontab -e` 第一次用会选择一下编辑器，`vim`还是`nano`自己看着来
+
 ```bash
 # 重启cron服务
 service cron restart
@@ -78,6 +80,8 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     systemctl restart cron
     ```
 
+<img src="./assets/crontab_cheatsheet.png" alt="crontab_cheatsheet" style="zoom:50%;" />
+
 ---
 
 ## 3. 一些坑
@@ -105,5 +109,4 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 </div>
 </div>
 </div>
-
 
