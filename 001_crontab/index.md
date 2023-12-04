@@ -79,7 +79,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 ---
 
-![crontab_cheatsheet](./001_crontab.assets/crontab_cheatsheet.png)
+![crontab_cheatsheet](crontab_cheatsheet.png)
 
 ---
 
@@ -108,4 +108,5 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 </div>
 </div>
 </div>
+
 
