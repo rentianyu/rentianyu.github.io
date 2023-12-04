@@ -11,7 +11,7 @@
 crontab –e
 
 # 重启cron服务,这可能重启一个就行，不放心的话都执行
-service cron restart
+service cron restart    # 这个比较新的系统可能不用
 systemctl restart cron
 
 # 列出定时任务
@@ -108,5 +108,4 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 </div>
 </div>
 </div>
-
 
