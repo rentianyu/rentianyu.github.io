@@ -7,9 +7,6 @@
 - `crontab -e` 第一次用会选择一下编辑器，`vim`还是`nano`自己看着来
 
 ```bash
-# 重启cron服务
-service cron restart
-
 # 编辑定时任务（重启cron服务才会生效）
 crontab –e
 

@@ -4,9 +4,172 @@
         <link>https://example.com/</link>
         <description>所行化坦途，所求皆如愿</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
-            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Thu, 30 Nov 2023 15:44:18 &#43;0800</lastBuildDate>
+            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Mon, 04 Dec 2023 20:02:53 &#43;0800</lastBuildDate>
             <atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Linux 进程守护之 systemctl</title>
+    <link>https://example.com/002_systemctl/</link>
+    <pubDate>Mon, 04 Dec 2023 20:02:53 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/002_systemctl/</guid>
+    <description><![CDATA[<h1 id="linux-进程管理之-systemctl">Linux 进程管理之 systemctl</h1>
+<h2 id="0介绍">0.介绍</h2>
+<p><code>systemctl</code>是systemd的主命令，用于管理系统。</p>
+<p>现在只介绍<code>systemctl</code>的进程守护<code>service</code>功能，首先编写配置文件，然后启用并重载配置。最后开启一下服务。</p>
+<hr>
+<h2 id="1编写配置文件">1.编写配置文件</h2>
+<ul>
+<li>
+<p>以下以<code>bot.service</code>为配置文件，守护<code>/usr/bin/python3 /root/bot/main.py</code>命令运行为例</p>
+</li>
+<li>
+<p>在<code>/etc/systemd/system/</code>目录下编写以<code>.service</code>结尾的配置文件</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 在/etc/systemd/system/目录下编写 bot.service 配置文件</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">[Unit]
+</span></span></span><span class="line"><span class="cl"><span class="s1">Description=bot    # 服务名称描述
+</span></span></span><span class="line"><span class="cl"><span class="s1">After=network.target sshd-keygen.service  # 在什么服务启动之后运行
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">[Service]
+</span></span></span><span class="line"><span class="cl"><span class="s1">User=root    # 用户
+</span></span></span><span class="line"><span class="cl"><span class="s1">WorkingDirectory=/root/bot    # 工作目录
+</span></span></span><span class="line"><span class="cl"><span class="s1">ExecStart=/usr/bin/python3 /root/bot/main.py  # 命令
+</span></span></span><span class="line"><span class="cl"><span class="s1">ExecStop=/bin/kill -HUP $MAINPID
+</span></span></span><span class="line"><span class="cl"><span class="s1">ExecReload=/bin/kill -HUP $MAINPID
+</span></span></span><span class="line"><span class="cl"><span class="s1">Restart=on-failure    # 什么情况下重启服务
+</span></span></span><span class="line"><span class="cl"><span class="s1">RestartSec=10s    # 重启时间间隔
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">[Install]
+</span></span></span><span class="line"><span class="cl"><span class="s1">WantedBy=multi-user.target  # 实现开机启动
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span> &gt; /etc/systemd/system/bot.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="2启用并重载配置">2.启用并重载配置</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> bot       <span class="c1"># 这个主要是设置成系统自启动</span>
+</span></span><span class="line"><span class="cl">systemctl daemon-reload    <span class="c1"># 重载所有修改过的配置文件</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="3启动服务">3.启动服务</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start bot    <span class="c1"># 启动服务</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="4修改配置文件后操作">4.修改配置文件后操作</h2>
+<ul>
+<li>配置文件没问题的话，前三步就可以运行起一个守护服务，如果要修改配置文件的话，需要以下操作</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/systemd/system/bot.service  <span class="c1"># 修改配置文件（用别的软件也可）</span>
+</span></span><span class="line"><span class="cl">systemctl daemon-reload              <span class="c1"># 重载所有配置文件</span>
+</span></span><span class="line"><span class="cl">systemctl restart bot                <span class="c1"># 重启服务</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="5systemctl用法汇总">5.<code>systemctl</code>用法汇总</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start bot      <span class="c1"># 启动</span>
+</span></span><span class="line"><span class="cl">systemctl stop bot       <span class="c1"># 停止</span>
+</span></span><span class="line"><span class="cl">systemctl restart bot    <span class="c1"># 重启</span>
+</span></span><span class="line"><span class="cl">systemctl status bot     <span class="c1"># 查看运行状态</span>
+</span></span><span class="line"><span class="cl">systemctl cat bot        <span class="c1"># 查看配置文件的内容</span>
+</span></span><span class="line"><span class="cl">systemctl enabled bot    <span class="c1"># 启用</span>
+</span></span><span class="line"><span class="cl">systemctl disabled bot   <span class="c1"># 禁用</span>
+</span></span><span class="line"><span class="cl">systemctl daemon-reload  <span class="c1"># 重载所有修改过的配置文件</span>
+</span></span><span class="line"><span class="cl">systemctl reload bot     <span class="c1"># 重载 bot.service 的配置文件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 以下是不常用命令</span>
+</span></span><span class="line"><span class="cl">systemctl is-active bot  <span class="c1"># 显示 bot.service 是否正在运行</span>
+</span></span><span class="line"><span class="cl">systemctl is-failed bot  <span class="c1"># 显示 bot.service 是否处于启动失败状态</span>
+</span></span><span class="line"><span class="cl">systemctl is-enabled bot <span class="c1"># 显示 bot.service 是否建立了启动链接</span>
+</span></span><span class="line"><span class="cl">systemctl show bot       <span class="c1"># 显示 bot.service 的所有底层参数</span>
+</span></span><span class="line"><span class="cl">systemctl show -p ExecStart bot <span class="c1"># 显示 bot.service 的指定属性的值</span>
+</span></span><span class="line"><span class="cl">systemctl set-property bot <span class="nv">User</span><span class="o">=</span>root <span class="c1"># 设置 bot.service 的指定属性</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div>
+<div style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
+<h5>「感谢支持」</h5>
+<button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+<span>赞赏</span></button>
+<div id="QR" style="display: none;">
+<div id="wechat" style="display: inline-block">
+<a class="fancybox" rel="group">
+</a>
+<h3>微信赞赏</h3>
+</div>
+<div id="alipay" style="display: inline-block">
+<a class="fancybox" rel="group">
+</a>
+<h3>支付宝赞赏</h3>
+</div>
+</div>
+</div>
+]]></description>
+</item>
+<item>
     <title>Linux 定时任务之 crontab</title>
     <link>https://example.com/001_crontab/</link>
     <pubDate>Thu, 30 Nov 2023 15:44:18 &#43;0800</pubDate>
@@ -44,15 +207,9 @@
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 重启cron服务</span>
-</span></span><span class="line"><span class="cl">service cron restart
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 编辑定时任务（重启cron服务才会生效）</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 编辑定时任务（重启cron服务才会生效）</span>
 </span></span><span class="line"><span class="cl">crontab –e
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 重启cron服务,这可能重启一个就行，不放心的话都执行</span>

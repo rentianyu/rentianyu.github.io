@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>系统 - 标签 - 小贝塔教程资源</title>
-        <link>https://example.com/tags/%E7%B3%BB%E7%BB%9F/</link>
-        <description>系统 - 标签 - 小贝塔教程资源</description>
+        <title>定时任务 - 标签 - 小贝塔教程资源</title>
+        <link>https://example.com/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</link>
+        <description>定时任务 - 标签 - 小贝塔教程资源</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
-            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Thu, 30 Nov 2023 15:44:18 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E7%B3%BB%E7%BB%9F/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Thu, 30 Nov 2023 15:44:18 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" rel="self" type="application/rss+xml" /><item>
     <title>Linux 定时任务之 crontab</title>
     <link>https://example.com/001_crontab/</link>
     <pubDate>Thu, 30 Nov 2023 15:44:18 &#43;0800</pubDate>
@@ -42,15 +42,9 @@
 </span><span class="lnt">23
 </span><span class="lnt">24
 </span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 重启cron服务</span>
-</span></span><span class="line"><span class="cl">service cron restart
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 编辑定时任务（重启cron服务才会生效）</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 编辑定时任务（重启cron服务才会生效）</span>
 </span></span><span class="line"><span class="cl">crontab –e
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 重启cron服务,这可能重启一个就行，不放心的话都执行</span>

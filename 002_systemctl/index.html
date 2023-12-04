@@ -4,32 +4,32 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>Linux 定时任务之 crontab - 小贝塔教程资源</title><meta name="Description" content="所行化坦途，所求皆如愿"><meta property="og:title" content="Linux 定时任务之 crontab" />
-<meta property="og:description" content="Linux 定时任务之 crontab 1. crontab一般用法，crontab –e crontab -e 第一次用会选择一下编辑器，vim还是nano自己看着来 1 2 3 4 5 6 7 8 9 10 11 12" />
+        <title>Linux 进程守护之 systemctl - 小贝塔教程资源</title><meta name="Description" content="所行化坦途，所求皆如愿"><meta property="og:title" content="Linux 进程守护之 systemctl" />
+<meta property="og:description" content="Linux 进程管理之 systemctl 0.介绍 systemctl是systemd的主命令，用于管理系统。 现在只介绍systemctl的进程守护service功能，首" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://example.com/001_crontab/" /><meta property="og:image" content="https://example.com/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-11-30T15:44:18+08:00" />
-<meta property="article:modified_time" content="2023-11-30T15:44:18+08:00" /><meta property="og:site_name" content="小贝塔教程资源" />
+<meta property="og:url" content="https://example.com/002_systemctl/" /><meta property="og:image" content="https://example.com/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-04T20:02:53+08:00" />
+<meta property="article:modified_time" content="2023-12-04T20:02:53+08:00" /><meta property="og:site_name" content="小贝塔教程资源" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://example.com/logo.png"/>
 
-<meta name="twitter:title" content="Linux 定时任务之 crontab"/>
-<meta name="twitter:description" content="Linux 定时任务之 crontab 1. crontab一般用法，crontab –e crontab -e 第一次用会选择一下编辑器，vim还是nano自己看着来 1 2 3 4 5 6 7 8 9 10 11 12"/>
+<meta name="twitter:title" content="Linux 进程守护之 systemctl"/>
+<meta name="twitter:description" content="Linux 进程管理之 systemctl 0.介绍 systemctl是systemd的主命令，用于管理系统。 现在只介绍systemctl的进程守护service功能，首"/>
 <meta name="application-name" content="小贝塔教程资源">
-<meta name="apple-mobile-web-app-title" content="小贝塔教程资源"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="https://example.com/001_crontab/" /><link rel="next" href="https://example.com/002_systemctl/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="小贝塔教程资源"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="https://example.com/002_systemctl/" /><link rel="prev" href="https://example.com/001_crontab/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Linux 定时任务之 crontab",
+        "headline": "Linux 进程守护之 systemctl",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/example.com\/001_crontab\/"
-        },"image": ["https:\/\/example.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Linux, crontab, 定时任务","wordcount":  866 ,
-        "url": "https:\/\/example.com\/001_crontab\/","datePublished": "2023-11-30T15:44:18+08:00","dateModified": "2023-11-30T15:44:18+08:00","publisher": {
+            "@id": "https:\/\/example.com\/002_systemctl\/"
+        },"image": ["https:\/\/example.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Linux, systemctl, 进程守护","wordcount":  716 ,
+        "url": "https:\/\/example.com\/002_systemctl\/","datePublished": "2023-12-04T20:02:53+08:00","dateModified": "2023-12-04T20:02:53+08:00","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/example.com\/images\/avatar.png"},"author": {
                 "@type": "Person",
@@ -100,10 +100,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Linux 定时任务之 crontab</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Linux 进程守护之 systemctl</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://blog.xbta.tk" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>小贝塔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-11-30">2023-11-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 866 字&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/001_crontab/" class="leancloud_visitors" data-flag-title="Linux 定时任务之 crontab">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-04">2023-12-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 716 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/002_systemctl/" class="leancloud_visitors" data-flag-title="Linux 进程守护之 systemctl">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -113,15 +113,27 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#1-crontab一般用法crontab-e">1. <code>crontab</code>一般用法，<code>crontab –e</code></a></li>
-    <li><a href="#2-crontab高级用法crontab-配置文件">2. <code>crontab</code>高级用法，<code>crontab 配置文件</code></a></li>
-    <li><a href="#3-一些坑">3. 一些坑</a></li>
+    <li><a href="#0介绍">0.介绍</a></li>
+    <li><a href="#1编写配置文件">1.编写配置文件</a></li>
+    <li><a href="#2启用并重载配置">2.启用并重载配置</a></li>
+    <li><a href="#3启动服务">3.启动服务</a></li>
+    <li><a href="#4修改配置文件后操作">4.修改配置文件后操作</a></li>
+    <li><a href="#5systemctl用法汇总">5.<code>systemctl</code>用法汇总</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="linux-定时任务之-crontab"><strong>Linux</strong> 定时任务之 <strong>crontab</strong></h1>
-<h2 id="1-crontab一般用法crontab-e">1. <code>crontab</code>一般用法，<code>crontab –e</code></h2>
+            </div><div class="content" id="content"><h1 id="linux-进程管理之-systemctl">Linux 进程管理之 systemctl</h1>
+<h2 id="0介绍">0.介绍</h2>
+<p><code>systemctl</code>是systemd的主命令，用于管理系统。</p>
+<p>现在只介绍<code>systemctl</code>的进程守护<code>service</code>功能，首先编写配置文件，然后启用并重载配置。最后开启一下服务。</p>
+<hr>
+<h2 id="1编写配置文件">1.编写配置文件</h2>
 <ul>
-<li><code>crontab -e</code> 第一次用会选择一下编辑器，<code>vim</code>还是<code>nano</code>自己看着来</li>
+<li>
+<p>以下以<code>bot.service</code>为配置文件，守护<code>/usr/bin/python3 /root/bot/main.py</code>命令运行为例</p>
+</li>
+<li>
+<p>在<code>/etc/systemd/system/</code>目录下编写以<code>.service</code>结尾的配置文件</p>
+</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -143,50 +155,69 @@
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 编辑定时任务（重启cron服务才会生效）</span>
-</span></span><span class="line"><span class="cl">crontab –e
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 重启cron服务,这可能重启一个就行，不放心的话都执行</span>
-</span></span><span class="line"><span class="cl">service cron restart
-</span></span><span class="line"><span class="cl">systemctl restart cron
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 列出定时任务</span>
-</span></span><span class="line"><span class="cl">crontab –l
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 配置文件解读及示例</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># minute hour day month week command</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#  分    时   日   月    周   命令</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 举例如下</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 实在不会，记得是看Crontab表达式：https://www.toolnb.com/tools/croncreate.html</span>
-</span></span><span class="line"><span class="cl">* * * * * sh /root/hello.sh  <span class="c1"># 每1分钟执行 sh /root/hello.s</span>
-</span></span><span class="line"><span class="cl">*/10 * * * * sh /root/hello.sh  <span class="c1"># 每10分钟</span>
-</span></span><span class="line"><span class="cl">* */2 * * * sh /root/hello.sh  <span class="c1"># 每2小时</span>
-</span></span><span class="line"><span class="cl"><span class="m">0</span> <span class="m">8</span> * * * sh /root/hello.sh  <span class="c1"># 每天8点0分</span>
-</span></span><span class="line"><span class="cl"><span class="m">0</span> 8,9,10 * * * sh /root/hello.sh  <span class="c1"># 每天8、9、10点</span>
-</span></span><span class="line"><span class="cl"><span class="m">0</span> 8-10 * * * sh /root/hello.sh  <span class="c1"># 每天8、9、10点</span>
-</span></span><span class="line"><span class="cl"><span class="m">0</span> 8-20/3 * * * sh /root/hello.sh  <span class="c1"># 每天8-20点中，每3小时执行一次</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 特殊的：开机触发</span>
-</span></span><span class="line"><span class="cl">@reboot sh /root/hello.sh  <span class="c1"># 开机执行</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 在/etc/systemd/system/目录下编写 bot.service 配置文件</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">[Unit]
+</span></span></span><span class="line"><span class="cl"><span class="s1">Description=bot    # 服务名称描述
+</span></span></span><span class="line"><span class="cl"><span class="s1">After=network.target sshd-keygen.service  # 在什么服务启动之后运行
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">[Service]
+</span></span></span><span class="line"><span class="cl"><span class="s1">User=root    # 用户
+</span></span></span><span class="line"><span class="cl"><span class="s1">WorkingDirectory=/root/bot    # 工作目录
+</span></span></span><span class="line"><span class="cl"><span class="s1">ExecStart=/usr/bin/python3 /root/bot/main.py  # 命令
+</span></span></span><span class="line"><span class="cl"><span class="s1">ExecStop=/bin/kill -HUP $MAINPID
+</span></span></span><span class="line"><span class="cl"><span class="s1">ExecReload=/bin/kill -HUP $MAINPID
+</span></span></span><span class="line"><span class="cl"><span class="s1">Restart=on-failure    # 什么情况下重启服务
+</span></span></span><span class="line"><span class="cl"><span class="s1">RestartSec=10s    # 重启时间间隔
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">[Install]
+</span></span></span><span class="line"><span class="cl"><span class="s1">WantedBy=multi-user.target  # 实现开机启动
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span> &gt; /etc/systemd/system/bot.service
 </span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<h2 id="2-crontab高级用法crontab-配置文件">2. <code>crontab</code>高级用法，<code>crontab 配置文件</code></h2>
+<h2 id="2启用并重载配置">2.启用并重载配置</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> bot       <span class="c1"># 这个主要是设置成系统自启动</span>
+</span></span><span class="line"><span class="cl">systemctl daemon-reload    <span class="c1"># 重载所有修改过的配置文件</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="3启动服务">3.启动服务</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start bot    <span class="c1"># 启动服务</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="4修改配置文件后操作">4.修改配置文件后操作</h2>
 <ul>
-<li><code>crontab -e</code> 其实是生成了个配置文件，我们也可以创建一个 <code>crontab</code>配置文件</li>
-<li>这个配置文件，简单来说是个脚本，可以设置 <code>shebang</code>、环境变量、指定用户，不过这几个都可不写</li>
-<li>允许一些简单的 <code>shell</code>语法</li>
-<li>举例一下配置文件，前两行可以不要</li>
+<li>配置文件没问题的话，前三步就可以运行起一个守护服务，如果要修改配置文件的话，需要以下操作</li>
 </ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim /etc/systemd/system/bot.service  <span class="c1"># 修改配置文件（用别的软件也可）</span>
+</span></span><span class="line"><span class="cl">systemctl daemon-reload              <span class="c1"># 重载所有配置文件</span>
+</span></span><span class="line"><span class="cl">systemctl restart bot                <span class="c1"># 重启服务</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="5systemctl用法汇总">5.<code>systemctl</code>用法汇总</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -208,70 +239,26 @@
 </span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/env bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start bot      <span class="c1"># 启动</span>
+</span></span><span class="line"><span class="cl">systemctl stop bot       <span class="c1"># 停止</span>
+</span></span><span class="line"><span class="cl">systemctl restart bot    <span class="c1"># 重启</span>
+</span></span><span class="line"><span class="cl">systemctl status bot     <span class="c1"># 查看运行状态</span>
+</span></span><span class="line"><span class="cl">systemctl cat bot        <span class="c1"># 查看配置文件的内容</span>
+</span></span><span class="line"><span class="cl">systemctl enabled bot    <span class="c1"># 启用</span>
+</span></span><span class="line"><span class="cl">systemctl disabled bot   <span class="c1"># 禁用</span>
+</span></span><span class="line"><span class="cl">systemctl daemon-reload  <span class="c1"># 重载所有修改过的配置文件</span>
+</span></span><span class="line"><span class="cl">systemctl reload bot     <span class="c1"># 重载 bot.service 的配置文件</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 开机触发</span>
-</span></span><span class="line"><span class="cl">@reboot wx <span class="s2">&#34;PVE 开机了！&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># PVE</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#5 8 * * * qm start 101</span>
-</span></span><span class="line"><span class="cl"><span class="m">58</span> <span class="m">23</span> * * * /usr/sbin/shutdown -h now
-</span></span><span class="line"><span class="cl"><span class="m">56</span> <span class="m">23</span> * * * /usr/sbin/qm list <span class="p">|</span> grep -q <span class="s2">&#34;101.*running&#34;</span> <span class="o">&amp;&amp;</span> /usr/sbin/qm shutdown <span class="m">101</span>
-</span></span><span class="line"><span class="cl"><span class="m">54</span> <span class="m">23</span> * * * /usr/sbin/qm list <span class="p">|</span> grep -q <span class="s2">&#34;102.*running&#34;</span> <span class="o">&amp;&amp;</span> /usr/sbin/qm <span class="nb">suspend</span> <span class="m">102</span> --todisk
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 更新ydns</span>
-</span></span><span class="line"><span class="cl"><span class="m">10</span> * * * * bash /root/sh/ydns.sh &gt; /dev/null
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 更新crontab</span>
-</span></span><span class="line"><span class="cl"><span class="m">30</span> <span class="m">8</span> * * * /usr/bin/crontab ~/sh/cron.list <span class="o">&amp;&amp;</span> /usr/sbin/service cron restart <span class="o">&amp;&amp;</span> /usr/bin/systemctl restart cron
+</span></span><span class="line"><span class="cl"><span class="c1"># 以下是不常用命令</span>
+</span></span><span class="line"><span class="cl">systemctl is-active bot  <span class="c1"># 显示 bot.service 是否正在运行</span>
+</span></span><span class="line"><span class="cl">systemctl is-failed bot  <span class="c1"># 显示 bot.service 是否处于启动失败状态</span>
+</span></span><span class="line"><span class="cl">systemctl is-enabled bot <span class="c1"># 显示 bot.service 是否建立了启动链接</span>
+</span></span><span class="line"><span class="cl">systemctl show bot       <span class="c1"># 显示 bot.service 的所有底层参数</span>
+</span></span><span class="line"><span class="cl">systemctl show -p ExecStart bot <span class="c1"># 显示 bot.service 的指定属性的值</span>
+</span></span><span class="line"><span class="cl">systemctl set-property bot <span class="nv">User</span><span class="o">=</span>root <span class="c1"># 设置 bot.service 的指定属性</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>
-<p>使用方法：</p>
-<ul>
-<li>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> <span class="c1"># 设置配置文件</span>
-</span></span><span class="line"><span class="cl">crontab ~/sh/cron.list
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 重启cron服务,这可能重启一个就行，不放心的话都执行</span>
-</span></span><span class="line"><span class="cl">service cron restart
-</span></span><span class="line"><span class="cl">systemctl restart cron
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ul>
-</li>
-</ul>
-<hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/rentianyu/media@main//img/PicList/crontab_cheatsheet.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/rentianyu/media@main//img/PicList/crontab_cheatsheet.png, https://cdn.jsdelivr.net/gh/rentianyu/media@main//img/PicList/crontab_cheatsheet.png 1.5x, https://cdn.jsdelivr.net/gh/rentianyu/media@main//img/PicList/crontab_cheatsheet.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/rentianyu/media@main//img/PicList/crontab_cheatsheet.png"
-        title="crontab_cheatsheet.png" /></p>
-<hr>
-<h2 id="3-一些坑">3. 一些坑</h2>
-<ol>
-<li>一般来讲，<code>crontab</code>的前边时间的表达式就只有5位，除非你懂，否则别整花里胡哨的</li>
-<li>如果没有导入环境变量(<code>export PATH</code>)，一些命令就要用绝对路径，比如：<code>/usr/sbin/service cron restart</code></li>
-<li>修改完配置文件后一定要重启一下服务</li>
-<li>有一些系统抽风，按常规方法改了也不生效，就得去改动 <code>cron</code>相关的底层文件</li>
-</ol>
-<div>
+</div><div>
 <div style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
 <h5>「感谢支持」</h5>
 <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
@@ -293,7 +280,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2023-11-30</span>
+                <span>更新于 2023-12-04</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
@@ -304,14 +291,13 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/crontab/">crontab</a>,&nbsp;<a href="/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">定时任务</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/systemctl/">systemctl</a>,&nbsp;<a href="/tags/%E8%BF%9B%E7%A8%8B%E5%AE%88%E6%8A%A4/">进程守护</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav">
-            <a href="/002_systemctl/" class="next" rel="next" title="Linux 进程守护之 systemctl">Linux 进程守护之 systemctl<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/001_crontab/" class="prev" rel="prev" title="Linux 定时任务之 crontab"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Linux 定时任务之 crontab</a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
