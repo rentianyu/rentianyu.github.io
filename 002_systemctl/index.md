@@ -91,7 +91,9 @@ systemctl show -p ExecStart bot # 显示 bot.service 的指定属性的值
 systemctl set-property bot User=root # 设置 bot.service 的指定属性
 ```
 
+## 6.参考文章
 
+- [Systemd 入门教程：命令篇](https://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html)
 
 <div>
 <div style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
@@ -111,5 +113,4 @@ systemctl set-property bot User=root # 设置 bot.service 的指定属性
 </div>
 </div>
 </div>
-
 

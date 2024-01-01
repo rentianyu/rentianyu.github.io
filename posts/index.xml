@@ -147,7 +147,11 @@
 </span></span><span class="line"><span class="cl">systemctl set-property bot <span class="nv">User</span><span class="o">=</span>root <span class="c1"># 设置 bot.service 的指定属性</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div>
+</div><h2 id="6参考文章">6.参考文章</h2>
+<ul>
+<li><a href="https://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="noopener noreffer ">Systemd 入门教程：命令篇</a></li>
+</ul>
+<div>
 <div style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
 <h5>「感谢支持」</h5>
 <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">

@@ -7,14 +7,12 @@
         <title>Linux 进程守护之 systemctl - 小贝塔教程资源</title><meta name="Description" content="所行化坦途，所求皆如愿"><meta property="og:title" content="Linux 进程守护之 systemctl" />
 <meta property="og:description" content="Linux 进程管理之 systemctl 0.介绍 systemctl是systemd的主命令，用于管理系统。 现在只介绍systemctl的进程守护service功能，首" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://example.com/002_systemctl/" /><meta property="og:image" content="https://example.com/logo.png"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://example.com/002_systemctl/" /><meta property="og:image" content="https://example.com/logo.png" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-12-04T20:02:53+08:00" />
 <meta property="article:modified_time" content="2023-12-04T20:02:53+08:00" /><meta property="og:site_name" content="小贝塔教程资源" />
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://example.com/logo.png"/>
-
-<meta name="twitter:title" content="Linux 进程守护之 systemctl"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://example.com/logo.png" /><meta name="twitter:title" content="Linux 进程守护之 systemctl"/>
 <meta name="twitter:description" content="Linux 进程管理之 systemctl 0.介绍 systemctl是systemd的主命令，用于管理系统。 现在只介绍systemctl的进程守护service功能，首"/>
 <meta name="application-name" content="小贝塔教程资源">
 <meta name="apple-mobile-web-app-title" content="小贝塔教程资源"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="canonical" href="https://example.com/002_systemctl/" /><link rel="prev" href="https://example.com/001_crontab/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -28,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/example.com\/002_systemctl\/"
-        },"image": ["https:\/\/example.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Linux, systemctl, 进程守护","wordcount":  716 ,
+        },"image": ["https:\/\/example.com\/images\/Apple-Devices-Preview.png"],"genre": "posts","keywords": "Linux, systemctl, 进程守护","wordcount":  731 ,
         "url": "https:\/\/example.com\/002_systemctl\/","datePublished": "2023-12-04T20:02:53+08:00","dateModified": "2023-12-04T20:02:53+08:00","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": "https:\/\/example.com\/images\/avatar.png"},"author": {
@@ -102,7 +100,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Linux 进程守护之 systemctl</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://blog.xbta.tk" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>小贝塔</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Linux</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-04">2023-12-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 716 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-12-04">2023-12-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 731 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/002_systemctl/" class="leancloud_visitors" data-flag-title="Linux 进程守护之 systemctl">
                         <i class="far fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -119,6 +117,7 @@
     <li><a href="#3启动服务">3.启动服务</a></li>
     <li><a href="#4修改配置文件后操作">4.修改配置文件后操作</a></li>
     <li><a href="#5systemctl用法汇总">5.<code>systemctl</code>用法汇总</a></li>
+    <li><a href="#6参考文章">6.参考文章</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h1 id="linux-进程管理之-systemctl">Linux 进程管理之 systemctl</h1>
@@ -258,7 +257,11 @@
 </span></span><span class="line"><span class="cl">systemctl set-property bot <span class="nv">User</span><span class="o">=</span>root <span class="c1"># 设置 bot.service 的指定属性</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div>
+</div><h2 id="6参考文章">6.参考文章</h2>
+<ul>
+<li><a href="https://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="noopener noreffer ">Systemd 入门教程：命令篇</a></li>
+</ul>
+<div>
 <div style="padding: 10px 0; margin: 20px auto; width: 100%; font-size:16px; text-align: center;">
 <h5>「感谢支持」</h5>
 <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
@@ -303,8 +306,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.4">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.xbta.tk" target="_blank">小贝塔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.121.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://blog.xbta.tk" target="_blank">小贝塔</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
