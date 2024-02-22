@@ -1,0 +1,84 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>安装 - 标签 - 小贝塔教程资源</title>
+        <link>https://example.com/tags/%E5%AE%89%E8%A3%85/</link>
+        <description>安装 - 标签 - 小贝塔教程资源</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
+            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Sun, 15 Nov 2020 17:12:14 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E5%AE%89%E8%A3%85/" rel="self" type="application/rss+xml" /><item>
+    <title>一些Linux软件的安装</title>
+    <link>https://example.com/014_linux_soft/</link>
+    <pubDate>Sun, 15 Nov 2020 17:12:14 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/014_linux_soft/</guid>
+    <description><![CDATA[<h2 id="0-注意">0. 注意</h2>
+<ul>
+<li>以下只用于<code>Ubuntu</code>系统</li>
+</ul>
+<h2 id="1-docker">1. docker</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 安装官方docker</span>
+</span></span><span class="line"><span class="cl">curl -fsSL https://get.docker.com -o get-docker.sh
+</span></span><span class="line"><span class="cl">sudo sh get-docker.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用镜像源</span>
+</span></span><span class="line"><span class="cl">curl -fsSL https://get.docker.com -o get-docker.sh
+</span></span><span class="line"><span class="cl">sudo sh get-docker.sh --mirror Aliyun
+</span></span><span class="line"><span class="cl">sudo sh get-docker.sh --mirror AzureChinaCloud
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>参考网址：<a href="https://yeasy.gitbook.io/docker_practice/install/ubuntu#shi-yong-jiao-ben-zi-dong-an-zhuang" target="_blank" rel="noopener noreffer ">https://yeasy.gitbook.io/docker_practice/install/ubuntu</a></p>
+</blockquote>
+<h2 id="2nodejs">2.nodejs</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 最新长期服务版</span>
+</span></span><span class="line"><span class="cl">curl -sL https://deb.nodesource.com/setup_lts.x <span class="p">|</span> bash -
+</span></span><span class="line"><span class="cl">apt-get install -y nodejs
+</span></span><span class="line"><span class="cl"><span class="c1"># 15</span>
+</span></span><span class="line"><span class="cl">curl -fsSL https://deb.nodesource.com/setup_15.x <span class="p">|</span> sudo -E bash -
+</span></span><span class="line"><span class="cl">sudo apt-get install -y nodejs
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>参考网址：<a href="https://github.com/nodesource/distributions#installation-instructions" target="_blank" rel="noopener noreffer ">https://github.com/nodesource/distributions#installation-instructions</a></p>
+</blockquote>
+<h2 id="3rclone">3.rclone</h2>
+<ul>
+<li>安装linux版</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># root 用户执行</span>
+</span></span><span class="line"><span class="cl">curl https://rclone.org/install.sh <span class="p">|</span> sudo bash
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>参考网址：<a href="https://rclone.org/downloads/" target="_blank" rel="noopener noreffer ">https://rclone.org/downloads/</a></p>
+</blockquote>]]></description>
+</item>
+</channel>
+</rss>

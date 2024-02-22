@@ -1,0 +1,65 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>GitHub - 标签 - 小贝塔教程资源</title>
+        <link>https://example.com/tags/github/</link>
+        <description>GitHub - 标签 - 小贝塔教程资源</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
+            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Sat, 24 Oct 2020 15:19:32 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/github/" rel="self" type="application/rss+xml" /><item>
+    <title>GitHub与Gitee同步本地推送</title>
+    <link>https://example.com/007_github_gitee_sync/</link>
+    <pubDate>Sat, 24 Oct 2020 15:19:32 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/007_github_gitee_sync/</guid>
+    <description><![CDATA[<blockquote>
+<p>本文摘自于<a href="https://p3terx.com/archives/git-multi-remote-repository-management.html" target="_blank" rel="noopener noreffer ">Git 多远程仓库管理：GitHub 与 Gitee 双向同步</a>，详细用法请前往查看</p>
+</blockquote>
+<h2 id="一主仓库和镜像仓库">一、主仓库和镜像仓库</h2>
+<blockquote>
+<p>两仓库可同时控制</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 获取本地仓库已关联仓库</span>
+</span></span><span class="line"><span class="cl">git remote -v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加另一个远程仓库到 oring</span>
+</span></span><span class="line"><span class="cl">git remote set-url --add origin git@github.com:rentianyu/action.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="二分别拉取和推送">二、分别拉取和推送</h2>
+<blockquote>
+<p>两仓库分别控制</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 添加 GitHub 远程仓库并命名为 github</span>
+</span></span><span class="line"><span class="cl">git remote add github git@github.com:rentianyu/action.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 推送 GitHub 仓库</span>
+</span></span><span class="line"><span class="cl">git push github mster
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 推送原仓库</span>
+</span></span><span class="line"><span class="cl">git push <span class="c1"># 或者 git push origin mster</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item>
+</channel>
+</rss>

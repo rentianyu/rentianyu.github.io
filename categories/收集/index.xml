@@ -1,0 +1,57 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>收集 - 分类 - 小贝塔教程资源</title>
+        <link>http://localhost:1313/categories/%E6%94%B6%E9%9B%86/</link>
+        <description>收集 - 分类 - 小贝塔教程资源</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
+            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Sun, 15 Nov 2020 13:59:55 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%94%B6%E9%9B%86/" rel="self" type="application/rss+xml" /><item>
+    <title>汇总一些自动签到项目</title>
+    <link>http://localhost:1313/013_auto/</link>
+    <pubDate>Sun, 15 Nov 2020 13:59:55 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>http://localhost:1313/013_auto/</guid>
+    <description><![CDATA[<h2 id="1爱奇艺">1.爱奇艺</h2>
+<ul>
+<li>简介：爱奇艺VIP签到、VIP日常任务、每日三次抽奖，注意：这个只针对爱奇艺VIP用户。</li>
+<li>方式：云函数、本地</li>
+<li>更新时间：</li>
+<li>地址：<a href="https://www.sunjiwen.com/archives/295.html" target="_blank" rel="noopener noreffer ">https://www.sunjiwen.com/archives/295.html</a></li>
+</ul>
+<h2 id="2京豆">2.京豆</h2>
+<ul>
+<li>简介：自动完成京东部分任务得京豆。</li>
+<li>方式：GitHub Actions、服务器、云函数、本地</li>
+<li>地址：多方式：<a href="https://github.com/lxk0301/jd_scripts" target="_blank" rel="noopener noreffer ">https://github.com/lxk0301/jd_scripts</a>
+<ul>
+<li>服务器：<a href="https://github.com/EvineDeng/jd-base" target="_blank" rel="noopener noreffer ">https://github.com/EvineDeng/jd-base</a></li>
+<li>GitHub Actions：<a href="https://github.com/rentianyu/JD_tools" target="_blank" rel="noopener noreffer ">https://github.com/rentianyu/JD_tools</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="3哔哩哔哩">3.哔哩哔哩</h2>
+<ul>
+<li>简介：哔哩哔哩(<code>B</code>站)自动完成每日任务， 投币，点赞，直播签到，自动兑换银瓜子为硬币，自动送出即将过期礼物，漫画<code>App</code>签到，大会员领取<code>B</code>币卷等。每天获得<code>65</code>点经验，助你快速升级到<code>Lv6</code>。</li>
+<li>方式：GitHub Actions</li>
+<li>地址：<a href="https://github.com/rentianyu/BilibiliTask" target="_blank" rel="noopener noreffer ">https://github.com/rentianyu/BilibiliTask</a></li>
+</ul>
+<h2 id="4一个收集云函数的蓝奏云">4.一个收集云函数的蓝奏云</h2>
+<ul>
+<li>简介：联想社区、有道云笔记、贴吧、时光相册、天翼云盘、网易云音乐、有道云笔记、腾讯视频</li>
+<li>方式：云函数</li>
+<li>地址：<a href="https://ww.lanzous.com/b015dcrmb" target="_blank" rel="noopener noreffer ">https://ww.lanzous.com/b015dcrmb</a>     提取码：<code>66v7</code></li>
+</ul>
+<h2 id="5sspanel面板的机场流量签到">5.sspanel面板的机场流量签到</h2>
+<ul>
+<li>简介：sspanel面板的机场流量签到</li>
+<li>方式：云函数</li>
+<li>地址：<a href="https://github.com/ne-21/sspanel-automaticcheckin" target="_blank" rel="noopener noreffer ">https://github.com/ne-21/sspanel-automaticcheckin</a></li>
+</ul>
+<h2 id="6云函数的-100-种玩法">6.云函数的 100 种玩法</h2>
+<ul>
+<li>简介：本项目搜集了 云函数/Serverless 的 100 种玩法，签到，打卡，云盘，刷金币等各种应用集合。</li>
+<li>方式：云函数</li>
+<li>地址：<a href="https://github.com/tinafangkunding/awesome-serverless" target="_blank" rel="noopener noreffer ">https://github.com/tinafangkunding/awesome-serverless</a></li>
+</ul>]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,1750 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>教程 - 分类 - 小贝塔教程资源</title>
+        <link>https://example.com/categories/%E6%95%99%E7%A8%8B/</link>
+        <description>教程 - 分类 - 小贝塔教程资源</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
+            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Fri, 07 May 2021 22:10:19 &#43;0800</lastBuildDate><atom:link href="https://example.com/categories/%E6%95%99%E7%A8%8B/" rel="self" type="application/rss+xml" /><item>
+    <title>017_zsh与Oh-My-Zsh的简单配置</title>
+    <link>https://example.com/017_zsh_omz/</link>
+    <pubDate>Fri, 07 May 2021 22:10:19 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/017_zsh_omz/</guid>
+    <description><![CDATA[<h1 id="017_zsh与oh-my-zsh的配置">017_ZSH与Oh-My-Zsh的配置</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 安装 zsh</span>
+</span></span><span class="line"><span class="cl">apt install zsh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 无人值守安装 Oh-My-Zsh</span>
+</span></span><span class="line"><span class="cl">sh -c <span class="s2">&#34;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="k">)</span><span class="s2">&#34;</span> <span class="s2">&#34;&#34;</span> --unattended
+</span></span><span class="line"><span class="cl"><span class="c1"># 设置默认shell为zsh</span>
+</span></span><span class="line"><span class="cl">whoami <span class="p">|</span> grep root <span class="o">&amp;&amp;</span> chsh -s <span class="k">$(</span>which zsh<span class="k">)</span> <span class="o">||</span> chsh -s zsh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 克隆插件</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># zsh-autosuggestions</span>
+</span></span><span class="line"><span class="cl">git clone git://github.com/zsh-users/zsh-autosuggestions <span class="nv">$ZSH_CUSTOM</span>/plugins/zsh-autosuggestions
+</span></span><span class="line"><span class="cl"><span class="c1"># zsh-syntax-highlighting </span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="nv">$ZSH_CUSTOM</span>/plugins/zsh-syntax-highlighting
+</span></span><span class="line"><span class="cl"><span class="c1"># ys 主题</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/ZSH_THEME=.*/ZSH_THEME=&#34;ys&#34;/&#39;</span> ~/.zshrc
+</span></span><span class="line"><span class="cl"><span class="c1"># 启用插件</span>
+</span></span><span class="line"><span class="cl">sed -i <span class="s1">&#39;s/plugins=.*/plugins=(extract z zsh-autosuggestions zsh-syntax-highlighting)/&#39;</span> ~/.zshrc
+</span></span><span class="line"><span class="cl"><span class="c1"># extract  解压文件用的，所有的压缩文件，都可以直接 x filename</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 编辑ZSH配置文件</span>
+</span></span><span class="line"><span class="cl">vim ~/.zshrc
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看主题</span>
+</span></span><span class="line"><span class="cl">ls ~/.oh-my-zsh/themes
+</span></span><span class="line"><span class="cl"><span class="c1"># 更新配置</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc
+</span></span><span class="line"><span class="cl"><span class="c1"># 更新omz</span>
+</span></span><span class="line"><span class="cl">omz update
+</span></span><span class="line"><span class="cl"><span class="c1"># 卸载omz</span>
+</span></span><span class="line"><span class="cl">uninstall_oh_my_zsh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh" target="_blank" rel="noopener noreffer ">ohmyzsh官网</a></p>
+</blockquote>]]></description>
+</item>
+<item>
+    <title>提取软件界面Shell命令</title>
+    <link>https://example.com/016_intent/</link>
+    <pubDate>Fri, 27 Nov 2020 22:42:27 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/016_intent/</guid>
+    <description><![CDATA[<h2 id="前言">前言</h2>
+<p>此篇文章是关于找开启软件某些界面shell命令的教程。先说几点东西</p>
+<ol>
+<li>
+<p>下文提到的依心所言是 <a href="http://www.coolapk.com/u/768442" target="_blank" rel="noopener noreffer "><strong>酷安 @ l14789</strong></a></p>
+</li>
+<li>
+<p>以下教程中提到的文件皆可在 <a href="https://jq.qq.com/?_wv=1027&amp;k=LCtkXOpt" target="_blank" rel="noopener noreffer ">QQ群</a> <code>773276432</code> 下载，或者在其链接中下载</p>
+</li>
+</ol>
+<h2 id="一activity软件抓">一、Activity软件抓</h2>
+<p>​	此方法比较简单，安装 <a href="https://www.coolapk.com/apk/l.Activity" target="_blank" rel="noopener noreffer ">Activity</a> 软件，授予剪贴板权限、无障碍权限（如有root，直接一键激活）等权限，然后正常运行到要提取的界面，观察活动名，正确的话点一下悬浮窗提取所需要的的<code>包名/活动名</code> 到剪贴板。然后用以下命令拼接可得到所需命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">am start -n 包名/活动名
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意：</p>
+<ol>
+<li>
+<p>如果提取到的含有特殊符号（比如$）,把<code>包名/活动名</code>用英文的引号引起来，单、双引号都可，我称之为<code>引号原则</code>。</p>
+</li>
+<li>
+<p>如果<code>活动名</code>中含有<code>包名</code>，可删去<code>活动名</code>中的<code>包名</code>（强迫症福音）。</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">am start -n <span class="s1">&#39;包名/活动名&#39;</span>
+</span></span><span class="line"><span class="cl">am start -n <span class="s2">&#34;包名/活动名&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV1bD4y1X7T7&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<h2 id="二xposed-edge-pro抓">二、xposed edge pro抓</h2>
+<p>​	这个比较简单，思路就是利用xposed edge pro的<code>应用菜单</code>抓取，再处理其数据就得到命令</p>
+<ol>
+<li>
+<p>设置好edge手势（别的也可）触发<code>应用菜单</code></p>
+</li>
+<li>
+<p>到要抓的界面调出<code>应用菜单</code>-<code>活动</code>-<code>带参数提取活动</code></p>
+</li>
+<li>
+<p>以文本方式打开<code>/data/user_de/0/com.jozein.xedgepro/prefs/collection</code>找到最后一行</p>
+</li>
+<li>
+<p>以空格为界，最后一项为操作的值</p>
+</li>
+<li>
+<p>如果该值符合<code>包名/活动名</code>的特点，就按 <code>am start -n 包名/活动名</code>处理即可，</p>
+<p>否则按如下处理即可得到命令</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">am start <span class="s1">&#39;intent:值&#39;</span>
+</span></span><span class="line"><span class="cl">或
+</span></span><span class="line"><span class="cl">am start <span class="s2">&#34;intent:值&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV1Ri4y1c7sb&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<h2 id="三抓取桌面图标">三、抓取桌面图标</h2>
+<p>这个直接用依心所言的写的shell脚本即可</p>
+<ol>
+<li>下载依心所言的脚本：<a href="https://n802.com/f/18365508-480188501-5d83dc" target="_blank" rel="noopener noreffer ">提取Shortcut与桌面启动器(引号可选版)7.3.sh</a>（访问密码：1234）</li>
+<li>发送快捷方式到桌面</li>
+<li>运行脚本（可使用<a href="" rel="">MT管理器</a>、FV悬浮球、常规脚本）</li>
+<li>查找<code>/sdcard/A2020/</code>下文件中的命令</li>
+</ol>
+<div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV1RA411L7u9&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<h2 id="四抓取系统设置">四、抓取系统设置</h2>
+<p>这个直接用依心所言的写的shell脚本即可</p>
+<ol>
+<li>下载依心所言的脚本：<a href="https://n802.com/f/18365508-476139177-5207da" target="_blank" rel="noopener noreffer ">提取系统设置开关命令7.0版[依心所言与小贝塔].sh</a>（访问密码：1234）</li>
+<li>执行一次脚本</li>
+<li>改变一次设置开关状态</li>
+<li>然后再执行一次脚本</li>
+<li>接着查看抓到的信息</li>
+</ol>
+<div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV1Yf4y1e7Zt&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<h2 id="五url-scheme">五、URL scheme</h2>
+<p>这个命令的模板有两个</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 打开 URL scheme 命令 短版</span>
+</span></span><span class="line"><span class="cl">am start -d <span class="s1">&#39;URL Scheme&#39;</span>
+</span></span><span class="line"><span class="cl">或
+</span></span><span class="line"><span class="cl">am start -d <span class="s2">&#34;URL Scheme&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 打开 URL scheme 命令 长版</span>
+</span></span><span class="line"><span class="cl">am start -a android.intent.action.VIEW -d <span class="s1">&#39;URL Scheme&#39;</span>
+</span></span><span class="line"><span class="cl">或
+</span></span><span class="line"><span class="cl">am start -a android.intent.action.VIEW -d <span class="s2">&#34;URL Scheme&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个比较麻烦，我就写两种吧</p>
+<ol>
+<li>
+<p>网页中找</p>
+<p>1.1 找可以打开软件的网址</p>
+<p>1.2 特定网址查找</p>
+<p>1.3 网址源码中查找</p>
+<p>1.4 网页<code>js</code>中查找</p>
+</li>
+<li>
+<p>反编译软件碰运气（这里使用MT做演示）</p>
+<p>3.1 打开一个软件包</p>
+<p>3.2 反编译打开软件包根目录下的<code>AndroidManifest.xml</code>并搜索<code>scheme</code>或者<code>schema</code>来确定该软件支持的协议头</p>
+</li>
+<li>
+<p>有关文章</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><a href="https://sspai.com/post/44591" target="_blank" rel="noopener noreffer ">入门 iOS 自动化：读懂 URL Schemes</a></p>
+</li>
+<li>
+<p><a href="https://sspai.com/post/31500" target="_blank" rel="noopener noreffer ">URL Schemes 使用详解</a></p>
+</li>
+</ul>
+<div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV18i4y1T7zV&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<h2 id="六edge联合termux-api一键抓取">六、edge联合termux-api一键抓取</h2>
+<p>这个需要安装termux以及termux-api，并且把termux有关命令安装进系统才行</p>
+<h2 id="后记">后记</h2>
+<ol>
+<li>关于双开软件没有介绍，只简单提一句<code>am start --user 999 </code>，可以在终端输入<code>am</code>查看使用方法.</li>
+<li>关于我注明的使用的他人脚本，我（小贝塔）已经取得脚本作者允许这样使用，其他人使用请联系脚本作者。</li>
+<li>本教程文章所有权归本人 <a href="https://xiaobeita.vercel.app" target="_blank" rel="noopener noreffer ">小贝塔</a> 所有，本文仅供学习交流，未经本人许可，严禁用于商业用途，转载请注明出处。</li>
+</ol>]]></description>
+</item>
+<item>
+    <title>Everything使用教程</title>
+    <link>https://example.com/015_everything/</link>
+    <pubDate>Tue, 24 Nov 2020 13:16:53 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/015_everything/</guid>
+    <description><![CDATA[<h2 id="everything">Everything</h2>
+<blockquote>
+<p>本文由 <a href="http://ksria.com/simpread/" target="_blank" rel="noopener noreffer ">简悦 SimpRead</a> 转码， 原文地址 <a href="https://www.thisfaner.com/p/everything/" target="_blank" rel="noopener noreffer ">https://www.thisfaner.com/p/everything/</a></p>
+</blockquote>
+<p>Everything 安装好后，建议开启Everything 服务</p>
+<p>Everything 服务可以索引 NTFS 分卷和监控 USN 日志。</p>
+<p>这将可以让 Everything 以标准用户方式运行，而不用每次打开Everything都提示需要管理员权限( UAC )。</p>
+<p>开启 Everything 服务： 工具 👉 选项 👉 常规 👉 取消以管理员运行，勾选 Everything 服务。</p>
+<blockquote>
+<p>同时可以选择开启 <strong>搜索历史</strong>。</p>
+</blockquote>
+<h2 id="快捷键">快捷键</h2>
+<p>通过热键打开 Everything 窗口有以下三种方式：</p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新建搜索口</td>
+<td>总是打开一个新建的 Everything 搜索窗口。</td>
+</tr>
+<tr>
+<td>打开搜索口</td>
+<td>打开已存在的 Everything 搜索窗口，否则创建新的 Everything 搜索窗口。</td>
+</tr>
+<tr>
+<td>切换搜索口</td>
+<td>隐藏前台的 Everything 搜索窗口，否则激活后台的 Everything 搜索窗口，否则创建新的 Everything 搜索窗口。</td>
+</tr>
+</tbody>
+</table>
+<p>禁用 Windows 默认热键，例如 Win + F：</p>
+<ul>
+<li>
+<p>进入开始菜单，打开 regedit。</p>
+</li>
+<li>
+<p>进入注册表编辑器，转到：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>创建新字符串值 <strong>DisabledHotkeys</strong>。</p>
+</li>
+<li>
+<p>设置 DisabledHotkeys 数据为您想要释放的字母，例如：<strong>F</strong>。</p>
+</li>
+<li>
+<p>重启计算机。</p>
+</li>
+<li>
+<p>在 Everything 中应用释放的热键 Win + F。</p>
+</li>
+</ul>
+<h2 id="筛选器">筛选器</h2>
+<p>筛选器是预定义的搜索选项，例如音频和视频文件类型 。</p>
+<blockquote>
+<p>书签： 可以利用一下</p>
+</blockquote>
+<h2 id="运行历史">运行历史</h2>
+<p>利用运行历史来 打开经常运行文件，Everything 记忆每次结果的运行次数。</p>
+<p>在搜索框中按 Enter 已选择最高运行次数的结果。</p>
+<p>手动设置运行次数 ： 选中一个文件或文件夹 👉 文件 👉 设置运行次数</p>
+<p>以运行次数排序，右键点击列表空白处并点击排序-&gt;运行次数。</p>
+<blockquote>
+<p>默认开启运行历史，可在选项中设置</p>
+</blockquote>
+<p>使用 <code>runcount:</code>来搜索指定运行次数或运行次数范围。</p>
+<p>搜索运行次数大于 100：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">runcount:&gt;100
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>搜索运行次数至少一次：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">runcount:
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>搜索运行次数在 10 与 20 之间：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">runcount:10-20
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置默认以运行次数排序：</p>
+<ul>
+<li>在 <em><strong>“Everything”*</strong> 中，打开</em><em>工具</em><em>菜单，点击</em><em>选项</em>*。</li>
+<li>点击<strong>首页</strong>页面。</li>
+<li>更改<strong>排序方式</strong>为<strong>运行次数 (降序)</strong>。</li>
+<li>点击<strong>确定</strong>。</li>
+</ul>
+<h2 id="搜索">搜索</h2>
+<p><strong>Everything 搜索语法和正则表达式语法的区别与联系：</strong></p>
+<p>正则表达式默认覆盖搜索语法。搜索操作符、通配符、宏、修饰符和函数无法工作于正则表达式模式。</p>
+<p>正则表达式必须从搜索菜单启用或使用搜索前缀 <code>regex:</code></p>
+<p>可以限定搜索某一分区，例如，搜索分区 <strong>D:</strong> 中文件和文件夹：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">d:
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>搜索分区 D: 或 E: 上 mp3 文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">d:|e: *.mp3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>搜索分区 D: 上 jpg 或 png 文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">d: *.jpg|*.png
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用双引号以转义空格，搜索 <strong>C:\Program Files</strong> 下文件和文件夹：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;c:\program files\&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>仅搜索文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">file:
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>仅搜索文件夹：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">folder:
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>限定搜索单个文件夹（以它为父文件夹的子文件夹）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">parent:c:\windows
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用 \ 来搜索部分路径，例如，在以 <strong>documents</strong> 结尾文件夹中搜索文件和文件夹：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">documents\
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用空格以组合搜索条件，例如，在以 <strong>work</strong> 开头文件夹下搜索包含 <strong>order</strong> 的文件和文件夹：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">\work order
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>搜索大于 1MB 的文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">size:&gt;1mb
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>搜索 D:\music 下不包含 mp3 的文件夹：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">d:\music\ !child:mp3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>⭐ 利用 <strong>高级搜索</strong>框 来拼接最终的搜索字符串</p>
+</blockquote>
+<p><strong>指定文件目录搜索：</strong> 在检索条件中使用<code>\</code>，可以指定查找位置</p>
+<ul>
+<li><code>TDDOWNLOAD\ abc</code> 在所有TDDOWNLOAD文件夹下搜索包含abc字符的文件及文件夹</li>
+<li><code>TDDOWNLOAD\ *.jpg</code> 在所有TDDOWNLOAD文件夹下搜索jpg后缀文件</li>
+<li><code>F:\TDDOWNLOAD\ abc</code> 在F:\TDDOWNLOAD\目录下搜索包含abc字符的文件及文件夹</li>
+<li><code>F:\TDDOWNLOAD\ *.jpg</code> 在F:\TDDOWNLOAD\目录下搜索jpg后缀文件</li>
+</ul>
+<p><strong>排除指定目录：</strong> 使用 <code>!</code> （非）排除</p>
+<ul>
+<li>排除指定目录：<code>!绝对路径\</code></li>
+<li>排除指定子目录：<code>!子目录名称\</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">!C:\*Windows* !?:\$RECYCLE.BIN* file:*.exe|*.lnk|*.ahk|*.bat|*.cmd !D:\Scoop\Applications\shims 
+</span></span><span class="line"><span class="cl">!D:\Scoop\Applications\shims\  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">操作符: 
+</span></span><span class="line"><span class="cl">  space  与 (AND)
+</span></span><span class="line"><span class="cl">  |  或 (OR)
+</span></span><span class="line"><span class="cl">  !  非 (NOT)
+</span></span><span class="line"><span class="cl">  &lt; &gt;  分组
+</span></span><span class="line"><span class="cl">  &#34; &#34;  搜索引号内的词组.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">修饰符：
+</span></span><span class="line"><span class="cl">filelist:&lt;fn1|fn2|...&gt;  搜索 文件名列表 中的文件.
+</span></span><span class="line"><span class="cl">type:&lt;type&gt;  搜索指定的文件类型的文件和文件夹
+</span></span><span class="line"><span class="cl">file:  仅匹配文件.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">函数：
+</span></span><span class="line"><span class="cl">attrib:&lt;attributes&gt;  搜索指定的文件属性的文件和文件夹.
+</span></span><span class="line"><span class="cl">attribdupe:  搜索含有相同属性的文件和文件夹.
+</span></span><span class="line"><span class="cl">child:&lt;filename&gt;  搜索包含匹配文件名文件或文件夹的文件夹。
+</span></span><span class="line"><span class="cl">attributes:&lt;attributes&gt;  搜索指定的文件属性的文件和文件夹.
+</span></span><span class="line"><span class="cl">parent:&lt;path&gt;  搜索指定路径下的文件和文件夹 (不包含子文件夹).
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>Scoop安装的程序的最新版都在 current 快捷方式下，并且旧版中的exe文件仍然保存，这样对RunAny会造成问题</p>
+<ul>
+<li>思路一： 通过目录限定。步骤复杂，并且还需解决软链接带来的问题</li>
+<li>思路二： 让其只选择日期最新的exe （尝试了一下奴婢实现不了）</li>
+<li>思路三： 求大佬教我解决方法</li>
+</ul>
+</blockquote>
+<p><strong>多关键词搜索示例：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">123 abc            搜索包含123和abc的文件和文件夹
+</span></span><span class="line"><span class="cl">123|abc            搜索包含123或abc的文件和文件夹
+</span></span><span class="line"><span class="cl">*.jpg|*.flv
+</span></span><span class="line"><span class="cl">.jpg | .flv           搜索jpg或flv后缀文件         （两种表示方式任选一种，第二种竖线|两边加空格）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>竖线 |表示或，空格表示与，都可以多个连续使用</p>
+<p>在使用之前，确保已经打开正则表达式选项（菜单Search → Enable Regex）</p>
+<p>为了在搜索条件中包含空格，你可以使用双引号。
+例如，<code>&quot;foo bar&quot;</code>只能匹配 <code>foo bar</code>，而不能匹配fooadbar、fooibar等等。</p>
+</blockquote>
+<p>如何只显示二级目录内容，不显示多级子目录下文件？示例 <code>C:\New Folder\ parents:2</code></p>
+<h2 id="重复文件">重复文件</h2>
+<p>以下搜索函数可以搜索重复文件：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">搜索函数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>dupe:</code></td>
+<td style="text-align:left">搜索含有相同文件名的文件和文件夹。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>attribdupe:</code></td>
+<td style="text-align:left">搜索含有相同属性的文件和文件夹。按属性排序以显示最佳结果。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dadupe:</code></td>
+<td style="text-align:left">搜索含有相同访问时间的文件和文件夹。按访问时间排序以显示最佳结果。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dcdupe:</code></td>
+<td style="text-align:left">搜索含有相同创建时间的文件和文件夹。按创建时间排序以显示最佳结果。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dmdupe:</code></td>
+<td style="text-align:left">搜索含有相同修改时间的文件和文件夹。按修改时间排序以显示最佳结果。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>namepartdupe:</code></td>
+<td style="text-align:left">搜索含有相同名称部分的文件和文件夹 (不包含扩展名)。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>sizedupe:</code></td>
+<td style="text-align:left">搜索大小相同的文件和文件夹。按大小排序以显示最佳结果。</td>
+</tr>
+</tbody>
+</table>
+<p>重复文件将在完整索引中搜索，而不是当前搜索结果。</p>
+<p>搜索并以重复属性类型排序以显示最佳结果。。</p>
+<p>Everything 不会检测文件内容。使用重复搜索函数作为辅助。</p>
+<p>实用例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">dupe: .mp4
+</span></span><span class="line"><span class="cl"># 这个很实用
+</span></span><span class="line"><span class="cl">size:&gt;1gb sizedupe:
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>补充：</p>
+<p><code>empty:</code> 搜索空文件夹</p>
+</blockquote>
+<h2 id="与日期相关的搜索">与日期相关的搜索</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数/缩写</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>recentchange:&lt;date&gt;</code> ,<code>rc:&lt;date&gt;</code></td>
+<td style="text-align:left">搜索指定最近修改日期的文件和文件夹。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>dateaccessed:&lt;date&gt;</code> , <code>da:&lt;date&gt;</code></td>
+<td style="text-align:left">搜索指定访问时间的文件和文件夹。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>datecreated:&lt;date&gt;</code> ,<code>dc:&lt;date&gt;</code></td>
+<td style="text-align:left">搜索指定创建日期的文件和文件夹。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>datemodified:&lt;date&gt;</code> , <code>dm:&lt;date&gt;</code></td>
+<td style="text-align:left">搜索指定修改日期的文件和文件夹。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>daterun:&lt;date&gt;</code> , <code>dr:&lt;date&gt;</code></td>
+<td style="text-align:left">搜索指定打开时间的文件和文件夹。</td>
+</tr>
+</tbody>
+</table>
+<p>快速搜索今日修改的文件（监控系统实时变更）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">dm:today
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>搜索这周创建的文件和文件夹：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">dc:thisweek
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>搜索创建于2014 年 8 月 1 日到 2014 年 8 月 31 日的文件和文件夹:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">dc:1/8/2014-31/8/2014
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="正则表达式">正则表达式</h2>
+<p>正则表达式默认覆盖搜索语法。搜索操作符、通配符、宏、修饰符和函数无法工作于正则表达式模式。</p>
+<p>正则表达式必须从搜索菜单启用或使用搜索前缀 regex:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">正则表达式</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">`a</td>
+<td style="text-align:left">b`</td>
+</tr>
+<tr>
+<td style="text-align:left">`gr(a</td>
+<td style="text-align:left">e)y`</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>.</code></td>
+<td style="text-align:left">匹配任一字符</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[abc]</code></td>
+<td style="text-align:left">匹配任一字符：a 或 b 或 c</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[^abc]</code></td>
+<td style="text-align:left">匹配任一字符, 但不包括 a、b、c</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[a-z]</code></td>
+<td style="text-align:left">匹配从 a 到 z 之间的任一字符</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>[a-zA-Z]</code></td>
+<td style="text-align:left">匹配从 a 到 z, 及从 A 到 Z 之间的任一字符</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>^</code></td>
+<td style="text-align:left">匹配文件名的头部</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>$</code></td>
+<td style="text-align:left">匹配文件名的尾部</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>*</code></td>
+<td style="text-align:left">匹配前一项内容 0 或多次</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>?</code></td>
+<td style="text-align:left">匹配前一项内容 0 或 1 次</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>+</code></td>
+<td style="text-align:left">匹配前一项内容 1 或多次</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{x}</code></td>
+<td style="text-align:left">匹配前一项内容 x 次</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{x,}</code></td>
+<td style="text-align:left">匹配前一项内容 x 或多次</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>{x,y}</code></td>
+<td style="text-align:left">匹配前一项内容次数介于 x 和 y 之间</td>
+</tr>
+</tbody>
+</table>
+<h2 id="搜索历史">搜索历史</h2>
+<p>搜索历史是先前搜索记录列表。</p>
+<p>搜索历史默认禁用。</p>
+<p>当启用搜索历史后，您可以在搜索框通过组合键 Ctrl + Space 列举搜索建议。</p>
+<h2 id="文件夹索引">文件夹索引</h2>
+<p>文件夹索引让 Everything 可以索引任何文件系统文件夹。</p>
+<p>索引的文件夹甚至可以离线但仍旧可以通过 Everything 索引。</p>
+<p>例如，通过文件夹索引您可以索引以下：</p>
+<ul>
+<li>网络分享或映射的网络分区。</li>
+<li>FAT32 和其他分卷。</li>
+<li>任何物理文件夹 。</li>
+</ul>
+<p>添加方式： 工具 👉 选项 👉 索引 👉 …</p>
+<p><strong>索引的文件夹离线或不存在时会出现什么情况？</strong> 文件夹索引将会保持不变。</p>
+<p>但是，强制重建索引将会显示此文件夹为空。</p>
+<p>Everything 将会在指定的时间或周期时继续重扫描此文件夹，但仅在文件夹存在时更新索引。</p>
+<p>离线文件夹图标和文件信息显示将在数秒后超时。</p>
+<p>您可以在文件夹存在时按 F5 来刷新缓存。</p>
+<h2 id="文件列表">文件列表</h2>
+<p><a href="https://www.voidtools.com/zh-cn/support/everything/file_lists/" target="_blank" rel="noopener noreffer ">File Lists - voidtools</a></p>
+<p>Everything 文件列表(EFU) 推荐使用于离线文件或不会变动的文件，例如 CDROM、DVDROM 或只读 NAS。</p>
+<p>EFU 文件是包含文件名、大小、日期以及属性列表的<em>逗号分隔值 (CSV) 文件</em>。</p>
+<p>文件列表可以通过 Everything 打开或包含到 Everything 索引。</p>
+<p>文件列表可以被搜索并可以立即按大小、日期或属性排序。</p>
+<p>如何创建 EFU 文件列表？</p>
+<ul>
+<li>在 <em><strong>Everything”</strong></em> 中，打开<strong>工具</strong>菜单，点击<strong>文件列表编辑器…</strong>。</li>
+<li>在<strong>文件列表编辑器</strong>中，<strong>拖拽</strong>文件到列表以添加到文件列表。</li>
+<li>您也可以从编辑菜单添加文件和文件夹。</li>
+<li>添加完成后，打开<strong>文件</strong>菜单，点击<strong>保存</strong>。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>filelist:&lt;list&gt;</code></td>
+<td style="text-align:left">搜索文件名列表中的文件。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>filelistfilename:&lt;list&gt;</code></td>
+<td style="text-align:left">搜索文件名列表中的文件和文件夹。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>frn:&lt;list&gt;</code></td>
+<td style="text-align:left">搜索指定文件索引号的文件和文件夹。</td>
+</tr>
+</tbody>
+</table>
+<p>其他：</p>
+<ul>
+<li>使用（系统）计划任务更新文件列表</li>
+<li>包含文件列表到 the Everything 索引：工具 👉 选项 👉 文件列表 👉 添加</li>
+</ul>
+<h2 id="everything高级设置-ini文件">Everything高级设置 (ini文件)</h2>
+<p>文件 Everything.ini 保存有全部的 Everything 设置。</p>
+<p>一般来说， 文件 Everything.ini 将保存在 Everything.exe 相同目录 。</p>
+<blockquote>
+<p>对于实用Scoop安装 everything的用户，需要更改<code>..\scoop\Applications\persist\everything\</code> 目录下的ini文件。（persist目录是scoop专门用来保存用户配置的目录）</p>
+</blockquote>
+<p>注意：<strong>文件 Everything.ini 是自动生成的。Everything 运行过程中对 Everything.ini 的变更将丢失。</strong></p>
+<p>请<strong>从托盘图标中退出</strong> “<em>Everything</em>” 然后再更改 Everything.ini 文件。 Everything.ini 文件编码格式为 UTF-8。</p>
+<p>语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[section] 
+</span></span><span class="line"><span class="cl">key=value
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="实现搜索排序">实现搜索排序</h3>
+<p><strong>搜索相关设置</strong></p>
+<p><em><strong>sort</strong></em></p>
+<p>最后的排序。如果 home_sort 为 1，则在打开新的搜索窗口时将还原此排序。如果always_keep_sort 为 0，则如果是慢速排序，则将忽略此值。</p>
+<p>可以是下列排序类型之一：</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Name 名称</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Path 路径</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Extension 扩展名</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Type 类型</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Date modified 修改日期</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Date created 创建日期</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Date accessed 访问日期</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Attributes 属性</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Date recently changed 最近更改日期</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Run count 运行计数</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Date run 日期运行</td>
+</tr>
+<tr>
+<td>11</td>
+<td>File list filename 文件列表文件名</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>sort_ascending</strong></em></p>
+<p>升序或降序排序。设置为 <code>1</code> 以升序排序。设置为 <code>0</code> 以降序排序。</p>
+<p><strong>Everything如何实现搜索时直接以修改时间为默认排序？</strong></p>
+<p>找到 Everything.ini，修改如下几项参数的值为以下值：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sort=4
+</span></span><span class="line"><span class="cl">sort_ascending=0
+</span></span><span class="line"><span class="cl">always_keep_sort=1
+</span></span><span class="line"><span class="cl">home_sort=0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果找到正确的 Everything.ini 文件，并按上文的操作来进行就可以更改成功。</p>
+<blockquote>
+<p><a href="https://www.everythingsearch.cn/284.html" target="_blank" rel="noopener noreffer ">Everything_SetSort | Search Everything中文版</a></p>
+</blockquote>
+<h2 id="补充">补充</h2>
+<ul>
+<li>
+<p>搜索非NTFS格式文件：</p>
+<p>比如U盘，只需手动将其加入索引即可。</p>
+<p>工具👉选项👉索引👉文件夹👉添加👉选择U盘对应的盘符</p>
+</li>
+<li>
+<p>对文件中的内容进行搜索：利用 <code>content:&lt;text&gt;</code> 默认UTF-8格式文本内容</p>
+<p>由于现在用户经常使用ANSI和UNICODE两种不同的编码方式标准，因此这个参数的搜索规则是：“搜索路径” <code>ansicontent:</code>&ldquo;搜索关键词”，或者&quot;搜索路径” <code>utf16content:</code>&ldquo;搜索关键词”。比如我们要在E盘的ABC这个文件夹目录中搜索&quot;黑客&quot;这个关键词，那么就输入<code>E:abc utf16content:&quot;黑客&quot;</code>这一行命令，或者<code>E:abc ansicontent:&quot;黑客&quot;</code>这一行命令即可</p>
+</li>
+<li>
+<p>是</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>官方帮助文档</strong>：<a href="https://www.voidtools.com/zh-cn/support/everything/" target="_blank" rel="noopener noreffer ">Everything - voidtools</a></p>
+</blockquote>
+<h3 id="语法">语法</h3>
+<p><a href="https://www.voidtools.com/zh-cn/support/everything/searching/" target="_blank" rel="noopener noreffer ">Searching - voidtools</a></p>
+<ul>
+<li>操作符：</li>
+<li>通配符：仅有 <code>*</code> 和 <code>?</code></li>
+<li>宏：无需添加额外参数
+<ul>
+<li><code>zip:</code>搜索压缩文件，</li>
+<li><code>doc:</code> 搜索文档文件</li>
+<li>类似 <code>exe:</code> 、<code>pic:</code>、<code>audio:</code>、<code>video:</code></li>
+</ul>
+</li>
+<li>修饰符：示例<code>file:</code> 仅匹配文件</li>
+<li>函数：大多有参数，并且有函数语法</li>
+</ul>
+<p>函数语法：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><code>function:value</code></th>
+<th style="text-align:left">等于某设定值。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>function:&lt;=value</code></td>
+<td style="text-align:left">小于等于某设定值。</td>
+</tr>
+<tr>
+<td style="text-align:left">`function: | 小于某设定值。 |</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>function:=value</code></td>
+<td style="text-align:left">等于某设定值。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>function:&gt;value</code></td>
+<td style="text-align:left">大于某设定值。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>function:&gt;=value</code></td>
+<td style="text-align:left">大于等于某设定值。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>function:start..end</code></td>
+<td style="text-align:left">在起始值和终止值的范围内。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>function:start-end</code></td>
+<td style="text-align:left">在起始值和终止值的范围内。</td>
+</tr>
+</tbody>
+</table>
+<p>大小语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">size[kb|mb|gb]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>大小常数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><code>empty</code></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>tiny</code></td>
+<td style="text-align:left">0 KB &lt; 大小 &lt;= 10 KB</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>small</code></td>
+<td style="text-align:left">10 KB &lt; 大小 &lt;= 100 KB</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>medium</code></td>
+<td style="text-align:left">100 KB &lt; 大小 &lt;= 1 MB</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>large</code></td>
+<td style="text-align:left">1 MB &lt; 大小 &lt;= 16 MB</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>huge</code></td>
+<td style="text-align:left">16 MB &lt; 大小 &lt;= 128 MB</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>gigantic</code></td>
+<td style="text-align:left">大小 &gt; 128 MB</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>unknown</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>日期语法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">year
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>month/year</code> 或 <code>year/month</code> 取决于本地设置</p>
+<p><code>day/month/year</code>, <code>month/day/year</code> 或 <code>year/month/day</code> 取决于本地设置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">YYYY[-MM[-DD[Thh[:mm[:ss[.sss]]]]]]
+</span></span><span class="line"><span class="cl">YYYYMM[DD[Thh[mm[ss[.sss]]]]]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>日期常数：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">today
+</span></span><span class="line"><span class="cl">yesterday
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">january|february|march|april|may|june|july|august|september|october|november|december
+</span></span><span class="line"><span class="cl">jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec
+</span></span><span class="line"><span class="cl">sunday|monday|tuesday|wednesday|thursday|friday|saturday
+</span></span><span class="line"><span class="cl">sun|mon|tue|wed|thu|fri|sat
+</span></span><span class="line"><span class="cl">unknown
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item>
+<item>
+    <title>PowerShell的美化</title>
+    <link>https://example.com/012_powershell/</link>
+    <pubDate>Thu, 12 Nov 2020 16:28:35 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/012_powershell/</guid>
+    <description><![CDATA[<h2 id="一说明">一、说明</h2>
+<p>​	PowerShell的美化从两方面入手，一是命令行方面，这个安装 <a href="https://github.com/JanDeDobbeleer/oh-my-posh" target="_blank" rel="noopener noreffer ">oh-my-posh</a> 来解决，另一个就是字体和配色，按照我的设置解决。</p>
+<p>​	上个图</p>
+<p></p>
+<h2 id="二oh-my-posh的安装与配置">二、<code>oh-my-posh</code>的安装与配置</h2>
+<h3 id="21-安装-posh-git-和-oh-my-posh-模块">2.1 安装 <code>posh-git</code> 和 <code>oh-my-posh</code> 模块</h3>
+<p>​	<code>PowerShell</code>运行以下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="nb">posh-git</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="nb">oh-my</span><span class="n">-posh</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="22-修改powershell配置文件">2.2 修改<code>PowerShell</code>配置文件</h3>
+<p>​	<code>PowerShell</code>运行以下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># 如果之前没有配置文件，就新建一个 PowerShell 配置文件</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(!(</span><span class="nb">Test-Path</span> <span class="n">-Path</span> <span class="nv">$PROFILE</span> <span class="p">))</span> <span class="p">{</span> <span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">File</span> <span class="n">-Path</span> <span class="nv">$PROFILE</span> <span class="n">-Force</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c"># 修改配置文件</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo </span><span class="s1">&#39;Import-Module posh-git 
+</span></span></span><span class="line"><span class="cl"><span class="s1">Import-Module oh-my-posh 
+</span></span></span><span class="line"><span class="cl"><span class="s1">Set-Theme Star
+</span></span></span><span class="line"><span class="cl"><span class="s1">cd ~\Desktop
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span> <span class="p">&gt;</span> <span class="nv">$PROFILE</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="三字体和配色">三、字体和配色</h2>
+<h3 id="31-使用更纱黑体">3.1 使用更纱黑体</h3>
+<p>​	<a href="https://www.microsoft.com/store/productId/9MW0M424NCZ7" target="_blank" rel="noopener noreffer ">微软商店</a> 或者 <a href="https://github.com/be5invis/Sarasa-Gothic" target="_blank" rel="noopener noreffer ">GitHub</a> 下载更纱黑体。然后右击<code>PowerShell</code>窗口的左上角图标，点击属性，如下图。</p>
+<p>​	</p>
+<p>​	再按下图启用字体。</p>
+<p>​	</p>
+<h3 id="32-修改背景色">3.2 修改背景色</h3>
+<p>​	如下图修改背景色</p>
+<p>​	</p>
+<p>​	最好将布局也改一下</p>
+<p>​	</p>
+]]></description>
+</item>
+<item>
+    <title>记一次爬取图片的历程</title>
+    <link>https://example.com/011_pa_netbian/</link>
+    <pubDate>Wed, 11 Nov 2020 10:35:19 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/011_pa_netbian/</guid>
+    <description><![CDATA[<h2 id="一前言">一、前言</h2>
+<p>​		<a href="http://www.netbian.com" target="_blank" rel="noopener noreffer ">彼岸桌面</a> 是一个很好的收集壁纸的网站，壁纸高清，我很喜欢，并且还赞助了会员。这次的爬取对象就是它了。</p>
+<p>​		这次的流程是先写爬虫脚本，然后放在<code>VPS</code>上爬取地址，最后用<code>COLAB</code>下载。</p>
+<h2 id="二网站分析与确定爬取流程">二、网站分析与确定爬取流程</h2>
+<ol>
+<li>
+<p>分析网页网址</p>
+<p>​	比如，我想爬取 <a href="http://www.netbian.com/fengjing" target="_blank" rel="noopener noreffer ">风景</a> 类的壁纸，先进入风景专区，然后点击一张图片的地址，发现此时的图片预览图是原图！！！那就可以确定爬取流程了。先以一张图为例。</p>
+<p>1.1 找到图片分类网址</p>
+<p><code>http://www.netbian.com/fengjing</code></p>
+<p></p>
+<p>1.2 找到图片介绍地址和真实地址</p>
+<p>图片介绍地址：<code>http://www.netbian.com/desk/23006.htm</code></p>
+<p>图片真实地址：<code>http://img.netbian.com/file/2020/1108/1da1eab002604a8adcc33d8103b5758d.jpg</code></p>
+<p></p>
+</li>
+<li>
+<p>确定爬取流程</p>
+<p>2.1 风景分类界面获取介绍图片代号</p>
+<p>2.2 图片介绍界面获取图片真实地址</p>
+</li>
+</ol>
+<h2 id="三写脚本">三、写脚本</h2>
+<p>​	以下为获取<a href="http://www.netbian.com/fengjing/index_2.htm" target="_blank" rel="noopener noreffer ">风景</a>下图片链接的<code>bash</code>脚本，第一页的图片请单独处理。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># 以下代码只处理第2-203页，第一页的图片请自行处理</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 定义种类kind为fengjing</span>
+</span></span><span class="line"><span class="cl"><span class="nv">kind</span><span class="o">=</span>fengjing
+</span></span><span class="line"><span class="cl"><span class="c1"># 定义页码page为2 3 .. 203</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> page in <span class="k">$(</span>seq <span class="m">2</span> 203<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># 拼接种类页面链接kind_link</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">kind_link</span><span class="o">=</span><span class="s2">&#34;http://www.netbian.com/</span><span class="nv">$kind</span><span class="s2">/index_</span><span class="nv">$page</span><span class="s2">.htm&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># 获取该页所有图片编号pic_num_list</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">pic_num_list</span><span class="o">=</span><span class="k">$(</span>wget -qO- <span class="nv">$kind_link</span> <span class="p">|</span> grep -aoP <span class="s2">&#34;(?&lt;=href=\&#34;/desk/).*?(?=.htm)&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># 定义图片编号pic_num</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> pic_num in <span class="nv">$pic_num_list</span>
+</span></span><span class="line"><span class="cl">	<span class="k">do</span>
+</span></span><span class="line"><span class="cl">		<span class="c1"># 拼接图片信息页面链接pic_info_link</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">pic_info_link</span><span class="o">=</span>http://www.netbian.com/desk/<span class="nv">$pic_num</span>.htm
+</span></span><span class="line"><span class="cl">        <span class="c1"># 获取图片地址pic_link</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">pic_link</span><span class="o">=</span><span class="k">$(</span>wget -qO- <span class="nv">$pic_info_link</span> <span class="p">|</span> grep -aoP -m <span class="m">1</span> <span class="s2">&#34;http://img.netbian.com/file/20.*jpg(?=\&#34; alt)&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 打印图片地址</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="nv">$pic_link</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 保存图片地址到文件</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="nv">$pic_link</span> &gt;&gt; <span class="si">${</span><span class="nv">kind</span><span class="si">}</span>_down.txt
+</span></span><span class="line"><span class="cl">    <span class="k">done</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><code>grep -a</code>可以查找二进制中的文字</li>
+<li><code>grep -m 1</code>只保留第一次匹配</li>
+<li>用<code>wget -qO-</code>而不用<code>curl -s</code>的原因是之后的<code>grep -m 1</code>查找到之后会堵塞通道造成错误</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h2 id="四下载图片">四、下载图片</h2>
+<p>​	因为完全下载所需的空间需要几G之上，我的<code>VPS</code>不足以持，因此就用到了Google家的<code>COLAB</code></p>
+<ol>
+<li>
+<p>将爬取的下载链接上传到 <a href="https://drive.google.com" target="_blank" rel="noopener noreffer ">谷歌网盘</a> 的某个目录</p>
+</li>
+<li>
+<p>登录 <a href="https://colab.research.google.com" target="_blank" rel="noopener noreffer ">COLAB</a> 并新建笔记本，按照下图配置，然后依次运行即可</p>
+</li>
+</ol>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><code>COLAB</code> 中 <code>!</code>开头表示运行<code>SHELL</code>命令</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 挂载谷歌硬盘</span>
+</span></span><span class="line"><span class="cl">from google.colab import drive
+</span></span><span class="line"><span class="cl">drive.mount<span class="o">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装aria2</span>
+</span></span><span class="line"><span class="cl">!sudo apt install uget aria2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># cd 到文件夹</span>
+</span></span><span class="line"><span class="cl">!cd <span class="s2">&#34;/content/drive/Shared drives/1/fj&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">!aria2c -i fengjing_down.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">!zip fengjing.zip *
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p></p>
+<h2 id="五成品及反思">五、成品及反思</h2>
+<ul>
+<li>
+<p>成品：<a href="https://file.beita.workers.dev/2:/%E5%85%B6%E4%BB%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" target="_blank" rel="noopener noreffer ">彼岸桌面(http://netbian.com)_风景图片打包.zip</a></p>
+</li>
+<li>
+<p>此次抓取中，有几点需要注意，</p>
+</li>
+</ul>
+<ol>
+<li>下载网页源码之后可以找到文字，但用<code>grep</code>找不到，就是二进制文件的问题，加参数<code>-a</code>即可。</li>
+<li><code>grep</code>找到多个匹配，加参数<code>-m </code>即可只保留第一个。</li>
+<li><code>curl</code>和<code>grep</code>连用有时会导致通道堵塞，使用<code>wget -qO-</code>全下载之后再<code>grep</code>即可。</li>
+<li><code>COLAB</code>中使用shell命令极大的增加了能力，并且可以挂载谷歌网盘，极大得方便文件的传输。</li>
+</ol>]]></description>
+</item>
+<item>
+    <title>WSL (微软Linux子系统) 的安装与使用</title>
+    <link>https://example.com/010_wsl/</link>
+    <pubDate>Sat, 07 Nov 2020 12:40:50 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/010_wsl/</guid>
+    <description><![CDATA[<h2 id="一wsl的介绍">一、<code>WSL</code>的介绍</h2>
+<ol>
+<li><code>WSL</code>是什么：运行在win系统下的Linux子系统</li>
+<li><code>WSL</code>的版本：版本有两种，<code>WSL</code>一代 和<code>WSL</code>二代，相比一代而言，二代运行于虚拟机上，更接近于真实的Linux系统</li>
+<li>来个截图</li>
+</ol>
+<ul>
+<li></li>
+</ul>
+<h2 id="二wsl-的安装">二、<code>WSL</code> 的安装</h2>
+<ul>
+<li>以下安装方法为个人总结，有关详细信息和注意问题，请阅读微软官方文档：<a href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10" target="_blank" rel="noopener noreffer ">适用于 Linux 的 Windows 子系统安装指南 (Windows 10)</a></li>
+<li><code>WSL</code>两个版本的区别，可以阅读有关 <a href="https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions" target="_blank" rel="noopener noreffer ">比较WSL2 和WSL1</a> 的详细信息。</li>
+</ul>
+<h3 id="一安装wsl一代">（一）安装<code>WSL</code>一代</h3>
+<ol>
+<li>
+<p>启用<code>WSL</code>功能</p>
+<p>以管理员身份打开 PowerShell 并运行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dism</span><span class="p">.</span><span class="py">exe</span> <span class="p">/</span><span class="n">online</span> <span class="p">/</span><span class="nb">enable-feature</span> <span class="p">/</span><span class="n">featurename</span><span class="err">:</span><span class="nb">Microsoft-Windows</span><span class="n">-Subsystem-Linux</span> <span class="p">/</span><span class="n">all</span> <span class="p">/</span><span class="n">norestart</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>去微软商店搜索<code>Linux</code>，安装自己适用的系统</p>
+</li>
+</ol>
+<p></p>
+<ol start="3">
+<li>重启win系统即可安装完成</li>
+</ol>
+<h3 id="二安装wsl二代">（二）安装<code>WSL</code>二代</h3>
+<ol>
+<li>
+<p>启用 <code>WSL</code>功能和虚拟机功能</p>
+<p>以管理员身份打开 PowerShell 并运行：</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">dism</span><span class="p">.</span><span class="py">exe</span> <span class="p">/</span><span class="n">online</span> <span class="p">/</span><span class="nb">enable-feature</span> <span class="p">/</span><span class="n">featurename</span><span class="err">:</span><span class="nb">Microsoft-Windows</span><span class="n">-Subsystem-Linux</span> <span class="p">/</span><span class="n">all</span> <span class="p">/</span><span class="n">norestart</span>
+</span></span><span class="line"><span class="cl"><span class="n">dism</span><span class="p">.</span><span class="py">exe</span> <span class="p">/</span><span class="n">online</span> <span class="p">/</span><span class="nb">enable-feature</span> <span class="p">/</span><span class="n">featurename</span><span class="err">:</span><span class="n">VirtualMachinePlatform</span> <span class="p">/</span><span class="n">all</span> <span class="p">/</span><span class="n">norestart</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>
+<p>重启win系统</p>
+</li>
+<li>
+<p>安装Linux内核更新包</p>
+<p>下载并安装最新包：<a href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi" target="_blank" rel="noopener noreffer ">适用于 x64 计算机的 WSL2 Linux 内核更新包</a></p>
+</li>
+<li>
+<p>将 <code>WSL 2</code> 设置为默认版本</p>
+<p>以管理员身份打开 PowerShell 并运行：</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">wsl</span> <span class="p">-</span><span class="n">-set-default-version</span> <span class="mf">2</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>
+<p>在微软商店搜索<code>Linux</code>，安装自己适用的系统</p>
+</li>
+<li>
+<p>重启win系统</p>
+</li>
+</ol>
+<h2 id="三优化建议">三、优化建议</h2>
+<p>​	此为我自己的优化，仅供参考。</p>
+<h3 id="一安装windows-terminal来美化终端">（一）安装<code>Windows Terminal</code>来美化终端</h3>
+<ol>
+<li>在微软商店搜索<code>Windows Terminal</code>并安装</li>
+<li>其他详细信息请阅读 <a href="https://docs.microsoft.com/zh-cn/windows/terminal/get-started" target="_blank" rel="noopener noreffer ">安装 Windows 终端</a></li>
+</ol>
+<p></p>
+<h3 id="二设置默认用户为root">（二）设置默认用户为root</h3>
+<ol>
+<li>
+<p>先获取已安装的子系统名称和版本</p>
+<p>以管理员身份打开 PowerShell 并运行：</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">wsl</span> <span class="n">-l</span> <span class="n">-v</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p></p>
+<p>​	<code>NAME</code>对应的值便是已安装的子系统名称</p>
+<p>​	<code>VERSION</code>是对应系统的<code>WSL</code>版本</p>
+<ol start="2">
+<li>
+<p>设置默认用户为root</p>
+<p>以管理员身份打开 PowerShell 并运行：</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ubuntu</span> <span class="n">config</span> <span class="p">-</span><span class="n">-default-user</span> <span class="n">root</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">上述命令中，<code>ubuntu</code>是第一步中获取的<code>NAME</code>值</div>
+        </div>
+    </div>
+<h3 id="三wsl-1和wsl-2版本的无缝转换">（三）<code>WSL 1</code>和<code>WSL 2</code>版本的无缝转换</h3>
+<ol>
+<li>
+<p>先获取已安装的子系统名称和版本</p>
+<p>以管理员身份打开 PowerShell 并运行：</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">wsl</span> <span class="n">-l</span> <span class="n">-v</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p></p>
+<p>​	<code>NAME</code>对应的值便是已安装的子系统名称</p>
+<p>​	<code>VERSION</code>是对应系统的<code>WSL</code>版本</p>
+<ol start="2">
+<li>设置对应系统的版本</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">wsl</span> <span class="p">-</span><span class="n">-set-version</span> <span class="n">ubuntu</span> <span class="mf">2</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p></p>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">上述命令中，是以我的<code>Ubuntu</code>系统为例，把<code>WSL</code>版本换为二代，两版本转换的前提是<code>WSL 2</code>版本环境已正确配置</div>
+        </div>
+    </div>
+<h2 id="四有关文章">四、有关文章</h2>
+<ol>
+<li><code>WSL</code>的安装：<a href="https://docs.microsoft.com/zh-cn/windows/wsl/install-win10" target="_blank" rel="noopener noreffer ">适用于 Linux 的 Windows 子系统安装指南 (Windows 10)</a></li>
+<li>有关比较 <code>WSL 2</code> 和<code> WSL 1</code> 的详细信息：<a href="https://docs.microsoft.com/zh-cn/windows/wsl/compare-versions" target="_blank" rel="noopener noreffer ">比较 WSL 2 和 WSL 1</a></li>
+<li>设置<code>WSL</code>普通用户账号密码：<a href="https://docs.microsoft.com/zh-cn/windows/wsl/user-support" target="_blank" rel="noopener noreffer ">为新的 Linux 分发版创建用户帐户和密码</a></li>
+<li>安装<code>Windows Terminal</code>：<a href="https://docs.microsoft.com/zh-cn/windows/terminal/get-started" target="_blank" rel="noopener noreffer ">安装 Windows 终端</a></li>
+<li><code>WSL</code>有关命令：<a href="https://docs.microsoft.com/zh-cn/windows/wsl/reference" target="_blank" rel="noopener noreffer ">适用于 Linux 的 Windows 子系统的命令参考</a></li>
+</ol>
+]]></description>
+</item>
+<item>
+    <title>GitHub与Gitee同步本地推送</title>
+    <link>https://example.com/007_github_gitee_sync/</link>
+    <pubDate>Sat, 24 Oct 2020 15:19:32 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/007_github_gitee_sync/</guid>
+    <description><![CDATA[<blockquote>
+<p>本文摘自于<a href="https://p3terx.com/archives/git-multi-remote-repository-management.html" target="_blank" rel="noopener noreffer ">Git 多远程仓库管理：GitHub 与 Gitee 双向同步</a>，详细用法请前往查看</p>
+</blockquote>
+<h2 id="一主仓库和镜像仓库">一、主仓库和镜像仓库</h2>
+<blockquote>
+<p>两仓库可同时控制</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 获取本地仓库已关联仓库</span>
+</span></span><span class="line"><span class="cl">git remote -v
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加另一个远程仓库到 oring</span>
+</span></span><span class="line"><span class="cl">git remote set-url --add origin git@github.com:rentianyu/action.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="二分别拉取和推送">二、分别拉取和推送</h2>
+<blockquote>
+<p>两仓库分别控制</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 添加 GitHub 远程仓库并命名为 github</span>
+</span></span><span class="line"><span class="cl">git remote add github git@github.com:rentianyu/action.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 推送 GitHub 仓库</span>
+</span></span><span class="line"><span class="cl">git push github mster
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 推送原仓库</span>
+</span></span><span class="line"><span class="cl">git push <span class="c1"># 或者 git push origin mster</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item>
+<item>
+    <title>curl命令实现坚果云上传下载</title>
+    <link>https://example.com/005_webdav_by_curl/</link>
+    <pubDate>Fri, 14 Aug 2020 17:21:10 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/005_webdav_by_curl/</guid>
+    <description><![CDATA[<p><strong>使用curl实现坚果云上传下载坚果云，命令适用于webdav、ftp等</strong></p>
+<blockquote>
+<ul>
+<li>1.txt &mdash;- 代表本地文件</li>
+<li><a href="https://dav.jianguoyun.com/dav/" target="_blank" rel="noopener noreffer ">https://dav.jianguoyun.com/dav/</a> &mdash;- 坚果云根目录</li>
+<li>示例代码是根目录下新建的test目录</li>
+<li>user:pass &mdash;- 邮箱:应用密码</li>
+<li>应用密码获取：登录坚果云 → 账户信息 → 安全选项 → 第三方应用管理 → 添加应用</li>
+<li>本命令全部没有输出</li>
+</ul>
+</blockquote>
+<h2 id="1-上传文件">1. 上传文件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 单文件版</span>
+</span></span><span class="line"><span class="cl">curl -s -u <span class="s1">&#39;user:pass&#39;</span> -T <span class="s1">&#39;1.txt&#39;</span> <span class="s1">&#39;https://dav.jianguoyun.com/dav/test/&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 当前目录文件</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> i in <span class="k">$(</span>ls<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">do</span> 
+</span></span><span class="line"><span class="cl">curl -s -u <span class="s1">&#39;user:pass&#39;</span> -T <span class="s2">&#34;</span><span class="nv">$i</span><span class="s2">&#34;</span> <span class="s1">&#39;https://dav.jianguoyun.com/dav/test/&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="2-下载文件">2. 下载文件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 单文件版</span>
+</span></span><span class="line"><span class="cl">curl -s -u <span class="s1">&#39;user:pass&#39;</span> <span class="s1">&#39;https://dav.jianguoyun.com/dav/test/1.txt&#39;</span> -o <span class="s1">&#39;1.txt&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 单目录版</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> i in <span class="k">$(</span> curl -s -u <span class="s1">&#39;user:pass&#39;</span> <span class="s1">&#39;https://dav.jianguoyun.com/dav/test/&#39;</span> -X PROPFIND <span class="p">|</span> grep -o <span class="s1">&#39;name&gt;[^&lt;]*&#39;</span><span class="p">|</span> grep -o <span class="s1">&#39;[^&gt;]*$&#39;</span> <span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">curl -s -u <span class="s1">&#39;user:pass&#39;</span> <span class="s2">&#34;https://dav.jianguoyun.com/dav/test/</span><span class="nv">$i</span><span class="s2">&#34;</span> -o <span class="nv">$i</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3-删除文件">3. 删除文件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl -s -u <span class="s1">&#39;user:pass&#39;</span> <span class="s1">&#39;https://dav.jianguoyun.com/dav/test/1.txt&#39;</span>  -X DELETE
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4-列出当前目录文件夹及文件">4. 列出当前目录文件夹及文件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl -s -u <span class="s1">&#39;user:pass&#39;</span> <span class="s1">&#39;https://dav.jianguoyun.com/dav/test/&#39;</span> -X PROPFIND <span class="p">|</span> grep -o <span class="s1">&#39;name&gt;[^&lt;]*&#39;</span><span class="p">|</span> grep -o <span class="s1">&#39;[^&gt;]*$&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description>
+</item>
+<item>
+    <title>Typora使用图床——以Gitee做图床为例</title>
+    <link>https://example.com/003_pic_for_typora/</link>
+    <pubDate>Tue, 04 Aug 2020 22:01:43 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/003_pic_for_typora/</guid>
+    <description><![CDATA[<p><strong>Typora 使用 Gitee 图床</strong></p>
+<blockquote>
+<p>本教程以*<code>Gitee</code>*做图床为例</p>
+</blockquote>
+<hr>
+<hr>
+<h2 id="1-准备软件">1. 准备软件</h2>
+<h3 id="11-安装nodejs-httpsnodejsorgzh-cn">1.1 安装nodejs (<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener noreffer ">https://nodejs.org/zh-cn/</a>)</h3>
+<h3 id="12-typora里安装picgo-core命令行版">1.2 <em><code>Typora</code><em>里安装</em></em><code>PiCGo-Core</code>**命令行版</h3>
+<p>Typora里，按ctrl＋逗号键 → 图像 → PiCGo-Core(command line) → 下载 （建议使用代理）</p>
+<p></p>
+<hr>
+<hr>
+<h2 id="2-安装pic-go插件并打开配置文件也就是执行以下命令">2. 安装pic-go插件并打开配置文件，也就是执行以下命令</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># cmd里执行以下两个命令
+</span></span><span class="line"><span class="cl"><span class="nv">%APPDATA%</span>\Typora\picgo\win64\picgo.exe install gitee-uploader
+</span></span><span class="line"><span class="cl"><span class="nv">%UserProfile%</span>\.picgo\config.json
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>最小化打开的窗口，不要关闭</p>
+</blockquote>
+<hr>
+<hr>
+<h2 id="3-获取gitee的用户名仓库和私人令牌">3. 获取*<code>Gitee</code>*的用户名、仓库和私人令牌</h2>
+<h3 id="31-注册并登录gitee--httpsgiteecom记录用户名">3.1. 注册并登录Gitee  (<a href="https://gitee.com" target="_blank" rel="noopener noreffer ">https://gitee.com</a>)，记录用户名</h3>
+<h3 id="32-右上角新建仓库建一个公开项目记录仓库名">3.2. 右上角<code>+</code>，新建仓库（建一个公开项目），记录仓库名</h3>
+<h3 id="33-点击创建私人令牌httpsgiteecomprofilepersonal_access_tokensnew-记录私人令牌的值">3.3. <a href="https://gitee.com/profile/personal_access_tokens/new" target="_blank" rel="noopener noreffer ">点击创建私人令牌</a> ，记录私人令牌的值</h3>
+<hr>
+<h2 id="3-修改配置文件">3. 修改配置文件</h2>
+<p>将以下内容全部复制并替换到第一步里打开的文件，并把第二步生成的值修改为指定值，ctrl+s保存文件退出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;picBed&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;current&#34;</span><span class="p">:</span> <span class="s2">&#34;gitee&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;uploader&#34;</span><span class="p">:</span> <span class="s2">&#34;gitee&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;gitee&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;branch&#34;</span><span class="p">:</span> <span class="s2">&#34;master&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;customPath&#34;</span><span class="p">:</span> <span class="s2">&#34;yearMonth&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;customUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;repo&#34;</span><span class="p">:</span> <span class="s2">&#34;用户名/仓库名&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span><span class="p">:</span> <span class="s2">&#34;私人令牌&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transformer&#34;</span><span class="p">:</span> <span class="s2">&#34;path&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;picgoPlugins&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;picgo-plugin-gitee-uploader&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;picgo-plugin-github-plus&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;picgo-plugin-gitee-uploader&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;lastSync&#34;</span><span class="p">:</span> <span class="s2">&#34;2020-04-30 01:41:13&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;picgo-plugin-github-plus&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;lastSync&#34;</span><span class="p">:</span> <span class="s2">&#34;2020-04-07 11:09:08&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<hr>
+<h2 id="4-使用方法">4. 使用方法</h2>
+<h3 id="41-图片直接拖入到typora里并右击图片上传">4.1 图片直接拖入到Typora里，并右击图片上传</h3>
+<h3 id="42-qq或者微信截图之后到typora里粘贴右击图片上传">4.2 QQ或者微信截图之后，到Typora里粘贴，右击图片上传</h3>
+<p></p>
+<hr>
+<hr>
+<h2 id="5-本项目说明及手机端图床软件推荐">5. 本项目说明及手机端图床软件推荐</h2>
+<ul>
+<li>PiCGo-Core 不仅支持Gitee还支持GitHub、微博、七牛云、腾讯云COS、又拍云、阿里云OSS、SM.MS、imgur等，具体配置我就不提供了，请自行搜索</li>
+<li>手机推荐<a href="https://www.coolapk.com/apk/name.gudong.pic" target="_blank" rel="noopener noreffer ">咕咚云图</a>上传图片做图床，目前支持的图床如下</li>
+</ul>
+<hr>
+<hr>]]></description>
+</item>
+</channel>
+</rss>

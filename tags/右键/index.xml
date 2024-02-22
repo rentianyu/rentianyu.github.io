@@ -1,0 +1,60 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>右键 - 标签 - 小贝塔教程资源</title>
+        <link>https://example.com/tags/%E5%8F%B3%E9%94%AE/</link>
+        <description>右键 - 标签 - 小贝塔教程资源</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
+            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Mon, 26 Oct 2020 13:19:30 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/%E5%8F%B3%E9%94%AE/" rel="self" type="application/rss+xml" /><item>
+    <title>Windows系统右键增加新建MrakDown和sh</title>
+    <link>https://example.com/008_win_right_md/</link>
+    <pubDate>Mon, 26 Oct 2020 13:19:30 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/008_win_right_md/</guid>
+    <description><![CDATA[<h2 id="一保证已安装typora">一、保证已安装<code>Typora</code></h2>
+<ul>
+<li><a href="https://typora.io" target="_blank" rel="noopener noreffer ">Typora官网</a></li>
+</ul>
+<h2 id="二新建reg文件并写入以下内容">二、新建<code>.reg</code>文件并写入以下内容</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">Windows</span> <span class="n">Registry</span> <span class="n">Editor</span> <span class="n">Version</span> <span class="mf">5.00</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">\.</span><span class="n">md</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">@=</span><span class="s2">&#34;Typora.exe&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">\.</span><span class="n">md</span><span class="p">\</span><span class="n">ShellNew</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;NullFile&#34;</span><span class="p">=</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">\</span><span class="n">Typora</span><span class="p">.</span><span class="n">exe</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">@=</span><span class="s2">&#34;Markdown&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">\.</span><span class="n">sh</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">@=</span><span class="s2">&#34;notepad3.exe&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">\.</span><span class="n">sh</span><span class="p">\</span><span class="n">ShellNew</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;NullFile&#34;</span><span class="p">=</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">\</span><span class="n">notepad3</span><span class="p">.</span><span class="n">exe</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">@=</span><span class="s2">&#34;sh&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="三运行以上文件">三、运行以上文件</h2>
+<p>以下为效果图</p>
+<p></p>
+<blockquote>
+<p>本文代码源自于<a href="https://stepneverstop.github.io/win-rightclick-create-md.html" target="_blank" rel="noopener noreffer ">Windows下右键新建.md文件教程</a></p>
+</blockquote>]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,68 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>PowerShell - 标签 - 小贝塔教程资源</title>
+        <link>https://example.com/tags/powershell/</link>
+        <description>PowerShell - 标签 - 小贝塔教程资源</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
+            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Thu, 12 Nov 2020 16:28:35 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/powershell/" rel="self" type="application/rss+xml" /><item>
+    <title>PowerShell的美化</title>
+    <link>https://example.com/012_powershell/</link>
+    <pubDate>Thu, 12 Nov 2020 16:28:35 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/012_powershell/</guid>
+    <description><![CDATA[<h2 id="一说明">一、说明</h2>
+<p>​	PowerShell的美化从两方面入手，一是命令行方面，这个安装 <a href="https://github.com/JanDeDobbeleer/oh-my-posh" target="_blank" rel="noopener noreffer ">oh-my-posh</a> 来解决，另一个就是字体和配色，按照我的设置解决。</p>
+<p>​	上个图</p>
+<p></p>
+<h2 id="二oh-my-posh的安装与配置">二、<code>oh-my-posh</code>的安装与配置</h2>
+<h3 id="21-安装-posh-git-和-oh-my-posh-模块">2.1 安装 <code>posh-git</code> 和 <code>oh-my-posh</code> 模块</h3>
+<p>​	<code>PowerShell</code>运行以下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="nb">posh-git</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Install-Module</span> <span class="nb">oh-my</span><span class="n">-posh</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="22-修改powershell配置文件">2.2 修改<code>PowerShell</code>配置文件</h3>
+<p>​	<code>PowerShell</code>运行以下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># 如果之前没有配置文件，就新建一个 PowerShell 配置文件</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(!(</span><span class="nb">Test-Path</span> <span class="n">-Path</span> <span class="nv">$PROFILE</span> <span class="p">))</span> <span class="p">{</span> <span class="nb">New-Item</span> <span class="n">-Type</span> <span class="n">File</span> <span class="n">-Path</span> <span class="nv">$PROFILE</span> <span class="n">-Force</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c"># 修改配置文件</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo </span><span class="s1">&#39;Import-Module posh-git 
+</span></span></span><span class="line"><span class="cl"><span class="s1">Import-Module oh-my-posh 
+</span></span></span><span class="line"><span class="cl"><span class="s1">Set-Theme Star
+</span></span></span><span class="line"><span class="cl"><span class="s1">cd ~\Desktop
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;</span> <span class="p">&gt;</span> <span class="nv">$PROFILE</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="三字体和配色">三、字体和配色</h2>
+<h3 id="31-使用更纱黑体">3.1 使用更纱黑体</h3>
+<p>​	<a href="https://www.microsoft.com/store/productId/9MW0M424NCZ7" target="_blank" rel="noopener noreffer ">微软商店</a> 或者 <a href="https://github.com/be5invis/Sarasa-Gothic" target="_blank" rel="noopener noreffer ">GitHub</a> 下载更纱黑体。然后右击<code>PowerShell</code>窗口的左上角图标，点击属性，如下图。</p>
+<p>​	</p>
+<p>​	再按下图启用字体。</p>
+<p>​	</p>
+<h3 id="32-修改背景色">3.2 修改背景色</h3>
+<p>​	如下图修改背景色</p>
+<p>​	</p>
+<p>​	最好将布局也改一下</p>
+<p>​	</p>
+]]></description>
+</item>
+</channel>
+</rss>

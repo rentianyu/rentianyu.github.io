@@ -1,0 +1,115 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Windows - 标签 - 小贝塔教程资源</title>
+        <link>https://example.com/tags/windows/</link>
+        <description>Windows - 标签 - 小贝塔教程资源</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
+            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Mon, 26 Oct 2020 13:19:30 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/windows/" rel="self" type="application/rss+xml" /><item>
+    <title>Windows系统右键增加新建MrakDown和sh</title>
+    <link>https://example.com/008_win_right_md/</link>
+    <pubDate>Mon, 26 Oct 2020 13:19:30 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/008_win_right_md/</guid>
+    <description><![CDATA[<h2 id="一保证已安装typora">一、保证已安装<code>Typora</code></h2>
+<ul>
+<li><a href="https://typora.io" target="_blank" rel="noopener noreffer ">Typora官网</a></li>
+</ul>
+<h2 id="二新建reg文件并写入以下内容">二、新建<code>.reg</code>文件并写入以下内容</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">Windows</span> <span class="n">Registry</span> <span class="n">Editor</span> <span class="n">Version</span> <span class="mf">5.00</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">\.</span><span class="n">md</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">@=</span><span class="s2">&#34;Typora.exe&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">\.</span><span class="n">md</span><span class="p">\</span><span class="n">ShellNew</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;NullFile&#34;</span><span class="p">=</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">\</span><span class="n">Typora</span><span class="p">.</span><span class="n">exe</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">@=</span><span class="s2">&#34;Markdown&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">\.</span><span class="n">sh</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">@=</span><span class="s2">&#34;notepad3.exe&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">\.</span><span class="n">sh</span><span class="p">\</span><span class="n">ShellNew</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;NullFile&#34;</span><span class="p">=</span><span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">HKEY_CLASSES_ROOT</span><span class="p">\</span><span class="n">notepad3</span><span class="p">.</span><span class="n">exe</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">@=</span><span class="s2">&#34;sh&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="三运行以上文件">三、运行以上文件</h2>
+<p>以下为效果图</p>
+<p></p>
+<blockquote>
+<p>本文代码源自于<a href="https://stepneverstop.github.io/win-rightclick-create-md.html" target="_blank" rel="noopener noreffer ">Windows下右键新建.md文件教程</a></p>
+</blockquote>]]></description>
+</item>
+<item>
+    <title>激活 Windows 和 Office</title>
+    <link>https://example.com/004_activate/</link>
+    <pubDate>Wed, 05 Aug 2020 11:07:15 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/004_activate/</guid>
+    <description><![CDATA[<h2 id="一kms激活windows系统推荐">一、kms激活Windows系统，(推荐)</h2>
+<h3 id="11-数字激活windows-10">1.1 数字激活<code>Windows 10</code></h3>
+<ul>
+<li>下载 <a href="https://cmwtat.cloudmoe.com" target="_blank" rel="noopener noreffer ">云萌 Windows 10 激活工具</a> 激活</li>
+</ul>
+<blockquote>
+<p>参考网址：<a href="https://github.com/TGSAN/CMWTAT_Digital_Edition" target="_blank" rel="noopener noreffer ">CMWTAT_Digital_Edition</a></p>
+</blockquote>
+<h3 id="12-kms激活windows系统">1.2 <code>kms</code>激活<code>Windows</code>系统</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># 以管理员权限的CMD或PowerShell运行以下命令
+</span></span><span class="line"><span class="cl">slmgr /skms kms.v0v.bid
+</span></span><span class="line"><span class="cl">slmgr /ato
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>参考网址：<a href="https://v0v.bid/kms.html" target="_blank" rel="noopener noreffer ">Windows系统一句命令激活</a></p>
+</blockquote>
+<h2 id="二激活office">二、激活<code>Office</code></h2>
+<ul>
+<li>只适用于默认安装位置的64位版本的2010、2013、2016、2019、365版本</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># 以管理员权限的CMD或PowerShell运行以下命令
+</span></span><span class="line"><span class="cl"><span class="k">cd</span> <span class="s2">&#34;C:\Program Files\Microsoft Office\Office*&#34;</span>
+</span></span><span class="line"><span class="cl">cscript ospp.vbs /sethst:kms.v0v.bid
+</span></span><span class="line"><span class="cl">cscript ospp.vbs /act
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>参考网址：<a href="https://v0v.bid/kms.html" target="_blank" rel="noopener noreffer ">Windows系统一句命令激活</a></p>
+<p>激活脚本：便捷KMS一键激活脚本 <a href="https://v0v.bid/kmspro.zip" target="_blank" rel="noopener noreffer ">点击下载</a> （解压密码：<code>https://v0v.bid</code> ）</p>
+<p>​				或我提供的官方副本（免解压）：<a href="/images/kmspro.bat" rel="">kmspro.bat</a></p>
+<p>安装<code>Office</code>：<a href="https://otp.landian.vip" target="_blank" rel="noopener noreffer ">Office Tool Plus</a></p>
+</blockquote>]]></description>
+</item>
+</channel>
+</rss>

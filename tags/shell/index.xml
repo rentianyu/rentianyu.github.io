@@ -1,0 +1,173 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Shell - 标签 - 小贝塔教程资源</title>
+        <link>https://example.com/tags/shell/</link>
+        <description>Shell - 标签 - 小贝塔教程资源</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
+            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Fri, 27 Nov 2020 22:42:27 &#43;0800</lastBuildDate><atom:link href="https://example.com/tags/shell/" rel="self" type="application/rss+xml" /><item>
+    <title>提取软件界面Shell命令</title>
+    <link>https://example.com/016_intent/</link>
+    <pubDate>Fri, 27 Nov 2020 22:42:27 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://example.com/016_intent/</guid>
+    <description><![CDATA[<h2 id="前言">前言</h2>
+<p>此篇文章是关于找开启软件某些界面shell命令的教程。先说几点东西</p>
+<ol>
+<li>
+<p>下文提到的依心所言是 <a href="http://www.coolapk.com/u/768442" target="_blank" rel="noopener noreffer "><strong>酷安 @ l14789</strong></a></p>
+</li>
+<li>
+<p>以下教程中提到的文件皆可在 <a href="https://jq.qq.com/?_wv=1027&amp;k=LCtkXOpt" target="_blank" rel="noopener noreffer ">QQ群</a> <code>773276432</code> 下载，或者在其链接中下载</p>
+</li>
+</ol>
+<h2 id="一activity软件抓">一、Activity软件抓</h2>
+<p>​	此方法比较简单，安装 <a href="https://www.coolapk.com/apk/l.Activity" target="_blank" rel="noopener noreffer ">Activity</a> 软件，授予剪贴板权限、无障碍权限（如有root，直接一键激活）等权限，然后正常运行到要提取的界面，观察活动名，正确的话点一下悬浮窗提取所需要的的<code>包名/活动名</code> 到剪贴板。然后用以下命令拼接可得到所需命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">am start -n 包名/活动名
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意：</p>
+<ol>
+<li>
+<p>如果提取到的含有特殊符号（比如$）,把<code>包名/活动名</code>用英文的引号引起来，单、双引号都可，我称之为<code>引号原则</code>。</p>
+</li>
+<li>
+<p>如果<code>活动名</code>中含有<code>包名</code>，可删去<code>活动名</code>中的<code>包名</code>（强迫症福音）。</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">am start -n <span class="s1">&#39;包名/活动名&#39;</span>
+</span></span><span class="line"><span class="cl">am start -n <span class="s2">&#34;包名/活动名&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV1bD4y1X7T7&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<h2 id="二xposed-edge-pro抓">二、xposed edge pro抓</h2>
+<p>​	这个比较简单，思路就是利用xposed edge pro的<code>应用菜单</code>抓取，再处理其数据就得到命令</p>
+<ol>
+<li>
+<p>设置好edge手势（别的也可）触发<code>应用菜单</code></p>
+</li>
+<li>
+<p>到要抓的界面调出<code>应用菜单</code>-<code>活动</code>-<code>带参数提取活动</code></p>
+</li>
+<li>
+<p>以文本方式打开<code>/data/user_de/0/com.jozein.xedgepro/prefs/collection</code>找到最后一行</p>
+</li>
+<li>
+<p>以空格为界，最后一项为操作的值</p>
+</li>
+<li>
+<p>如果该值符合<code>包名/活动名</code>的特点，就按 <code>am start -n 包名/活动名</code>处理即可，</p>
+<p>否则按如下处理即可得到命令</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">am start <span class="s1">&#39;intent:值&#39;</span>
+</span></span><span class="line"><span class="cl">或
+</span></span><span class="line"><span class="cl">am start <span class="s2">&#34;intent:值&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV1Ri4y1c7sb&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<h2 id="三抓取桌面图标">三、抓取桌面图标</h2>
+<p>这个直接用依心所言的写的shell脚本即可</p>
+<ol>
+<li>下载依心所言的脚本：<a href="https://n802.com/f/18365508-480188501-5d83dc" target="_blank" rel="noopener noreffer ">提取Shortcut与桌面启动器(引号可选版)7.3.sh</a>（访问密码：1234）</li>
+<li>发送快捷方式到桌面</li>
+<li>运行脚本（可使用<a href="" rel="">MT管理器</a>、FV悬浮球、常规脚本）</li>
+<li>查找<code>/sdcard/A2020/</code>下文件中的命令</li>
+</ol>
+<div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV1RA411L7u9&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<h2 id="四抓取系统设置">四、抓取系统设置</h2>
+<p>这个直接用依心所言的写的shell脚本即可</p>
+<ol>
+<li>下载依心所言的脚本：<a href="https://n802.com/f/18365508-476139177-5207da" target="_blank" rel="noopener noreffer ">提取系统设置开关命令7.0版[依心所言与小贝塔].sh</a>（访问密码：1234）</li>
+<li>执行一次脚本</li>
+<li>改变一次设置开关状态</li>
+<li>然后再执行一次脚本</li>
+<li>接着查看抓到的信息</li>
+</ol>
+<div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV1Yf4y1e7Zt&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<h2 id="五url-scheme">五、URL scheme</h2>
+<p>这个命令的模板有两个</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 打开 URL scheme 命令 短版</span>
+</span></span><span class="line"><span class="cl">am start -d <span class="s1">&#39;URL Scheme&#39;</span>
+</span></span><span class="line"><span class="cl">或
+</span></span><span class="line"><span class="cl">am start -d <span class="s2">&#34;URL Scheme&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 打开 URL scheme 命令 长版</span>
+</span></span><span class="line"><span class="cl">am start -a android.intent.action.VIEW -d <span class="s1">&#39;URL Scheme&#39;</span>
+</span></span><span class="line"><span class="cl">或
+</span></span><span class="line"><span class="cl">am start -a android.intent.action.VIEW -d <span class="s2">&#34;URL Scheme&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个比较麻烦，我就写两种吧</p>
+<ol>
+<li>
+<p>网页中找</p>
+<p>1.1 找可以打开软件的网址</p>
+<p>1.2 特定网址查找</p>
+<p>1.3 网址源码中查找</p>
+<p>1.4 网页<code>js</code>中查找</p>
+</li>
+<li>
+<p>反编译软件碰运气（这里使用MT做演示）</p>
+<p>3.1 打开一个软件包</p>
+<p>3.2 反编译打开软件包根目录下的<code>AndroidManifest.xml</code>并搜索<code>scheme</code>或者<code>schema</code>来确定该软件支持的协议头</p>
+</li>
+<li>
+<p>有关文章</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><a href="https://sspai.com/post/44591" target="_blank" rel="noopener noreffer ">入门 iOS 自动化：读懂 URL Schemes</a></p>
+</li>
+<li>
+<p><a href="https://sspai.com/post/31500" target="_blank" rel="noopener noreffer ">URL Schemes 使用详解</a></p>
+</li>
+</ul>
+<div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV18i4y1T7zV&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+
+<h2 id="六edge联合termux-api一键抓取">六、edge联合termux-api一键抓取</h2>
+<p>这个需要安装termux以及termux-api，并且把termux有关命令安装进系统才行</p>
+<h2 id="后记">后记</h2>
+<ol>
+<li>关于双开软件没有介绍，只简单提一句<code>am start --user 999 </code>，可以在终端输入<code>am</code>查看使用方法.</li>
+<li>关于我注明的使用的他人脚本，我（小贝塔）已经取得脚本作者允许这样使用，其他人使用请联系脚本作者。</li>
+<li>本教程文章所有权归本人 <a href="https://xiaobeita.vercel.app" target="_blank" rel="noopener noreffer ">小贝塔</a> 所有，本文仅供学习交流，未经本人许可，严禁用于商业用途，转载请注明出处。</li>
+</ol>]]></description>
+</item>
+</channel>
+</rss>
