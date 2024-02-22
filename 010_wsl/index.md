@@ -8,7 +8,7 @@
 1.  `WSL`是什么：运行在win系统下的Linux子系统
 2.  `WSL`的版本：版本有两种，`WSL`一代 和`WSL`二代，相比一代而言，二代运行于虚拟机上，更接近于真实的Linux系统
 3.  来个截图
--   ![WSL-neofetch](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201107115626669.png)
+-   ![WSL-neofetch](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201107115626669.png)
 
 
 
@@ -29,7 +29,7 @@
 
 2.  去微软商店搜索`Linux`，安装自己适用的系统
 
-![Linux](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201107120334792.png)
+![Linux](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201107120334792.png)
 
 3.  重启win系统即可安装完成
 
@@ -75,7 +75,7 @@ wsl --set-default-version 2
 1.  在微软商店搜索`Windows Terminal`并安装
 2.  其他详细信息请阅读 [安装 Windows 终端](https://docs.microsoft.com/zh-cn/windows/terminal/get-started)
 
-![Windows Terminal](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201107122055798.png)
+![Windows Terminal](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201107122055798.png)
 
 
 
@@ -89,7 +89,7 @@ wsl --set-default-version 2
 wsl -l -v
 ```
 
-![wsl信息](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201108170133354.png)
+![wsl信息](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201108170133354.png)
 
 ​	`NAME`对应的值便是已安装的子系统名称
 
@@ -117,7 +117,7 @@ ubuntu config --default-user root
 wsl -l -v
 ```
 
-![wsl信息](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201108171658356.png)
+![wsl信息](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201108171658356.png)
 
 ​	`NAME`对应的值便是已安装的子系统名称
 
@@ -128,7 +128,7 @@ wsl -l -v
 ```powershell
 wsl --set-version ubuntu 2
 ```
-![wsl版本转换](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201108170750853.png)
+![wsl版本转换](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201108170750853.png)
 
 {{< admonition tip "注意"  >}}
 上述命令中，是以我的`Ubuntu`系统为例，把`WSL`版本换为二代，两版本转换的前提是`WSL 2`版本环境已正确配置 {{< /admonition >}}

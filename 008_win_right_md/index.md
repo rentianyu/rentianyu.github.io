@@ -30,7 +30,7 @@ Windows Registry Editor Version 5.00
 
 以下为效果图
 
-![右键添加MarkDown效果图](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201115175922221.png)
+![右键添加MarkDown效果图](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201115175922221.png)
 
 
 

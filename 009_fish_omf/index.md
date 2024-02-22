@@ -193,214 +193,214 @@ rm -r $(find ~ -name fish)
 
 ### 1 agnoster
 
-+ ![agnoster](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201104225326041.png)
++ ![agnoster](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201104225326041.png)
 ### 2 aight
-+ ![aight](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201104225733557.png)
++ ![aight](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201104225733557.png)
 ### 3 ays
-+ ![ays](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201104225837458.png)
++ ![ays](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201104225837458.png)
 ### 4 barracuda（termux专用）
-+ ![barracuda](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201104230006188.png)
++ ![barracuda](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201104230006188.png)
 ### 5 batman
-+ ![batman](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105101656281.png)
++ ![batman](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105101656281.png)
 ### 6 beloglazov
-+ ![beloglazov](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105101800049.png)
++ ![beloglazov](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105101800049.png)
 ### 7 bira
-+ ![bira](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105101841892.png)
++ ![bira](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105101841892.png)
 ### 8 bobthefish
-+ ![bobthefish](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105101922909.png)
++ ![bobthefish](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105101922909.png)
 ### 9 bongnoster
-+ ![bongnoster](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105102018047.png)
++ ![bongnoster](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105102018047.png)
 ### 10 boxfish
-+ ![boxfish](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105102122508.png)
++ ![boxfish](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105102122508.png)
 ### 11 budspencer
-+ ![budspencer](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105111228079.png)
++ ![budspencer](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105111228079.png)
 ### 12 cbjohnson
-+ ![cbjohnson](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105114702600.png)
++ ![cbjohnson](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105114702600.png)
 ### 13 chain
-+ ![chain](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105114808620.png)
++ ![chain](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105114808620.png)
 ### 14 clearance
-+ ![clearance](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105114915383.png)
++ ![clearance](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105114915383.png)
 ### 15 cmorrell
-+ ![cmorrell](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105114956353.png)
++ ![cmorrell](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105114956353.png)
 ### 16 coffeeandcode
-+ ![coffeeandcode](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105115130366.png)
++ ![coffeeandcode](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105115130366.png)
 ### 17 cor (emoji-clock Error)
 + 无
 ### 18 cyan (math: Error)
-+ ![cyan](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105115719566.png)
++ ![cyan](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105115719566.png)
 ### 19 dangerous ( [I] 提示)
-+ ![dangerous](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105120300589.png)
++ ![dangerous](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105120300589.png)
 ### 20 default
-+ ![default](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105121600036.png)
++ ![default](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105121600036.png)
 ### 21 dmorrell
-+ ![dmorrell](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105121640503.png)
++ ![dmorrell](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105121640503.png)
 ### 22 doughsay
-+ ![doughsay](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105121732784.png)
++ ![doughsay](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105121732784.png)
 ### 23 eclm
-+ ![eclm](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105121814268.png)
++ ![eclm](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105121814268.png)
 ### 24 edan
-+ ![edan](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105121856890.png)
++ ![edan](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105121856890.png)
 ### 25 eden
-+ ![eden](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105122040115.png)
++ ![eden](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105122040115.png)
 ### 26 emoji-powerline
-+ ![emoji-powerline](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105122346033.png)
++ ![emoji-powerline](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105122346033.png)
 ### 27 es
-+ ![es](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105122426476.png)
++ ![es](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105122426476.png)
 ### 28 fishbone
-+ ![fishbone](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105122933273.png)
++ ![fishbone](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105122933273.png)
 ### 29 fishface
-+ ![fishface](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105125026283.png)
++ ![fishface](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105125026283.png)
 ### 30 fishy-drupal
-+ ![fishy-drupal](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105125123438.png)
++ ![fishy-drupal](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105125123438.png)
 ### 31 fisk
-+ ![fisk](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105125202846.png)
++ ![fisk](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105125202846.png)
 ### 32 flash
-+ ![flash](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105125242785.png)
++ ![flash](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105125242785.png)
 ### 33 fox
-+ ![fox](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105125332753.png)
++ ![fox](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105125332753.png)
 ### 34 gentoo
-+ ![gentoo](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105125552404.png)
++ ![gentoo](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105125552404.png)
 ### 35 gianu
-+ ![gianu](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105125638369.png)
++ ![gianu](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105125638369.png)
 ### 36 gitstatus
-+ ![gitstatus](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105125719389.png)
++ ![gitstatus](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105125719389.png)
 ### 37 gnuykeaj
-+ ![gnuykeaj](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105125754433.png)
++ ![gnuykeaj](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105125754433.png)
 ### 38 godfather
-+ ![godfather](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105125830343.png)
++ ![godfather](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105125830343.png)
 ### 39 graystatus
-+ ![graystatus](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105125911664.png)
++ ![graystatus](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105125911664.png)
 ### 40 harleen
-+ ![harleen](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105130008061.png)
++ ![harleen](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105130008061.png)
 ### 41 idan
-+ ![idan](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105130109701.png)
++ ![idan](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105130109701.png)
 ### 42 integral
-+ ![integral](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105130155957.png)
++ ![integral](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105130155957.png)
 ### 43 jacaetevha
-+ ![jacaetevha](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105130246626.png)
++ ![jacaetevha](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105130246626.png)
 ### 44 johanson
-+ ![johanson](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105130332372.png)
++ ![johanson](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105130332372.png)
 
 ### 45 kawasaki
 
-+ ![kawasaki](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105130412888.png)
++ ![kawasaki](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105130412888.png)
 ### 46 krisleech
-+ ![krisleech](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105130450636.png)
++ ![krisleech](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105130450636.png)
 ### 47 l
-+ ![l](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105130526541.png)
++ ![l](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105130526541.png)
 ### 48 lambda
 
-+ ![lambda](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105130615217.png)
++ ![lambda](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105130615217.png)
 ### 49 lavender
-+ ![lavender](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105130653384.png)
++ ![lavender](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105130653384.png)
 
 ### 50 lolfish
 
-+ ![lolfish](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105182028294.png)
++ ![lolfish](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105182028294.png)
 
 ### 51 mars
 
-+ ![mars](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105182125815.png)
++ ![mars](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105182125815.png)
 ### 52 mish
 
-+ ![mish](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105182233084.png)
++ ![mish](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105182233084.png)
 
 ### 53 mokou
 
-+ ![mokou](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105182321281.png)
++ ![mokou](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105182321281.png)
 
 ### 54 mtahmed
 
-+ ![mtahmed](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105182417277.png)
++ ![mtahmed](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105182417277.png)
 ### 55 nai
-+ ![nai](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105131743505.png)
++ ![nai](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105131743505.png)
 ### 56 nelsonjchen
-+ ![nelsonjchen](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105131827401.png)
++ ![nelsonjchen](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105131827401.png)
 ### 57 neolambda
-+ ![neolambda](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105131911614.png)
++ ![neolambda](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105131911614.png)
 
 ### 58 numist
 
-+ ![numist](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105132003592.png)
++ ![numist](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105132003592.png)
 ### 59 ocean
-+ ![ocean](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105132050849.png)
++ ![ocean](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105132050849.png)
 ### 60 one
-+ ![one](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105132145334.png)
++ ![one](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105132145334.png)
 ### 61 pastfish
-+ ![pastfish](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105132233029.png)
++ ![pastfish](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105132233029.png)
 ### 62 perryh
-+ ![perryh](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105132307685.png)
++ ![perryh](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105132307685.png)
 ### 63 pie (Error)
-+ ![image-20201105132424126](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105132424126.png)
++ ![image-20201105132424126](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105132424126.png)
 ### 64 plain (Error)
 + 无
 ### 65 pure
-+ ![pure](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105135142869.png)
++ ![pure](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105135142869.png)
 ### 66 pygmalion
-+ ![pygmalion](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105135237394.png)
++ ![pygmalion](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105135237394.png)
 ### 67 random
 + 随机主题
 ### 68 randomrussel
-+ ![randomrussel](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105135411235.png)
++ ![randomrussel](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105135411235.png)
 ### 69 redfish
-+ ![redfish](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105135456945.png)
++ ![redfish](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105135456945.png)
 ### 70 red-snapper
-+ ![red-snapper](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105135535867.png)
++ ![red-snapper](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105135535867.png)
 ### 71 rider
-+ ![rider](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105135613195.png)
++ ![rider](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105135613195.png)
 ### 72 robbyrussell
-+ ![robbyrussell](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105135714997.png)
++ ![robbyrussell](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105135714997.png)
 ### 73 sashimi
-+ ![sashimi](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105135748723.png)
++ ![sashimi](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105135748723.png)
 ### 74 scorphish
-+ ![scorphish](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105135830835.png)
++ ![scorphish](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105135830835.png)
 ### 75 separation
-+ ![separation](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105135910653.png)
++ ![separation](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105135910653.png)
 ### 76 shellder
-+ ![shellder](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105135941856.png)
++ ![shellder](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105135941856.png)
 ### 77 simple-ass-prompt
-+ ![simple-ass-prompt](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105140019391.png)
++ ![simple-ass-prompt](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105140019391.png)
 ### 78 simplevi
-+ ![simplevi](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105140106754.png)
++ ![simplevi](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105140106754.png)
 ### 79 slacker
-+ ![slacker](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105140142812.png)
++ ![slacker](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105140142812.png)
 ### 80 slavic-cat
-+ ![slavic-cat](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105140218777.png)
++ ![slavic-cat](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105140218777.png)
 
 ### 81 solarfish
 
-+ ![solarfish](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105140329202.png)
++ ![solarfish](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105140329202.png)
 ### 82 spacefish
-+ ![spacefish](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105140405923.png)
++ ![spacefish](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105140405923.png)
 ### 83 sushi
-+ ![sushi](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105140447245.png)
++ ![sushi](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105140447245.png)
 ### 84 syl20bnr
-+ ![syl20bnr](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105140619004.png)
++ ![syl20bnr](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105140619004.png)
 ### 85 taktoa
-+ ![taktoa](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105140710721.png)
++ ![taktoa](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105140710721.png)
 ### 86 technopagan (moonmoji Error)
 + 无
 ### 87 toaster
-+ ![toaster](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105140852257.png)
++ ![toaster](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105140852257.png)
 ### 88 tomita
-+ ![tomita](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105140948212.png)
++ ![tomita](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105140948212.png)
 ### 89 trout (有点慢，需要安装rbenv)
-+ ![trout](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105141240911.png)
++ ![trout](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105141240911.png)
 ### 90 tweetjay
-+ ![tweetjay](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105141425123.png)
++ ![tweetjay](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105141425123.png)
 ### 91 uggedal
-+ ![uggedal](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105141536723.png)
++ ![uggedal](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105141536723.png)
 ### 92 will
-+ ![will](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105141623356.png)
++ ![will](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105141623356.png)
 ### 93 wolf-theme
-+ ![wolf-theme](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105141738021.png)
++ ![wolf-theme](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105141738021.png)
 ### 94 yimmy
 
-+ ![yimmy](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105141812505.png)
++ ![yimmy](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105141812505.png)
 ### 95 zeit
-+ ![zeit](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105141849079.png)
++ ![zeit](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105141849079.png)
 ### 96 zephyr
-+ ![zephyr](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105141926877.png)
++ ![zephyr](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105141926877.png)
 ### 97 zish
-+ ![zish](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201105142005719.png)
++ ![zish](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201105142005719.png)
 

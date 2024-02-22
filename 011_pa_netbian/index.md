@@ -19,7 +19,7 @@
 
     `http://www.netbian.com/fengjing`
 
-    ![彼岸桌面-风景分类](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201111104928714.png)
+    ![彼岸桌面-风景分类](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201111104928714.png)
 
     
 
@@ -31,7 +31,7 @@
 
     
 
-    ![彼岸桌面-单图](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201111105226256.png)
+    ![彼岸桌面-单图](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201111105226256.png)
 
 2.  确定爬取流程
 
@@ -105,7 +105,7 @@ drive.mount('/content/drive')
 !zip fengjing.zip *
 ```
 
-![colab](https://gitee.com/xiao_beita/tuchuang/raw/master/img/image-20201111135330301.png)
+![colab](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/blog/image-20201111135330301.png)
 
 ## 五、成品及反思
 
