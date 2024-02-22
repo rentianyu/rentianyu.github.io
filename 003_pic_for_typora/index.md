@@ -56,28 +56,16 @@ Typora里，按ctrl＋逗号键 → 图像 → PiCGo-Core(command line) → 下�
 ```json
 {
   "picBed": {
-    "current": "gitee",
-    "uploader": "gitee",
-    "gitee": {
-      "branch": "master",
-      "customPath": "yearMonth",
-      "customUrl": "",
-      "path": "",
-      "repo": "用户名/仓库名",
-      "token": "私人令牌"
-    },
-    "transformer": "path"
+    "uploader": "github", // 代表当前的默认上传图床为 github
+    "github": {
+      "repo": "rentianyu/media", // 仓库名，格式是 username/reponame
+      "token": "ghp_xxxxxxxxxxxxxxxx", // github token
+      "path": "img/PicList/", // 自定义存储路径，比如 img/
+      "customUrl": "https://cdn.jsdelivr.net/gh/rentianyu/media@main/", // 自定义域名，注意要加 http://或者 https://
+      "branch": "main" // 分支名，默认是 main
+    }
   },
-  "picgoPlugins": {
-    "picgo-plugin-gitee-uploader": true,
-    "picgo-plugin-github-plus": true
-  },
-  "picgo-plugin-gitee-uploader": {
-    "lastSync": "2020-04-30 01:41:13"
-  },
-  "picgo-plugin-github-plus": {
-    "lastSync": "2020-04-07 11:09:08"
-  }
+  "picgoPlugins": {} // 为插件预留
 }
 ```
 

@@ -63,45 +63,21 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;picBed&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;current&#34;</span><span class="p">:</span> <span class="s2">&#34;gitee&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;uploader&#34;</span><span class="p">:</span> <span class="s2">&#34;gitee&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;gitee&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;branch&#34;</span><span class="p">:</span> <span class="s2">&#34;master&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;customPath&#34;</span><span class="p">:</span> <span class="s2">&#34;yearMonth&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;customUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;repo&#34;</span><span class="p">:</span> <span class="s2">&#34;用户名/仓库名&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">      <span class="nt">&#34;token&#34;</span><span class="p">:</span> <span class="s2">&#34;私人令牌&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;transformer&#34;</span><span class="p">:</span> <span class="s2">&#34;path&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;uploader&#34;</span><span class="p">:</span> <span class="s2">&#34;github&#34;</span><span class="p">,</span> <span class="c1">// 代表当前的默认上传图床为 github
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;github&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;repo&#34;</span><span class="p">:</span> <span class="s2">&#34;rentianyu/media&#34;</span><span class="p">,</span> <span class="c1">// 仓库名，格式是 username/reponame
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;token&#34;</span><span class="p">:</span> <span class="s2">&#34;ghp_xxxxxxxxxxxxxxxx&#34;</span><span class="p">,</span> <span class="c1">// github token
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;img/PicList/&#34;</span><span class="p">,</span> <span class="c1">// 自定义存储路径，比如 img/
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;customUrl&#34;</span><span class="p">:</span> <span class="s2">&#34;https://cdn.jsdelivr.net/gh/rentianyu/media@main/&#34;</span><span class="p">,</span> <span class="c1">// 自定义域名，注意要加 http://或者 https://
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;branch&#34;</span><span class="p">:</span> <span class="s2">&#34;main&#34;</span> <span class="c1">// 分支名，默认是 main
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;picgoPlugins&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;picgo-plugin-gitee-uploader&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;picgo-plugin-github-plus&#34;</span><span class="p">:</span> <span class="kc">true</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;picgo-plugin-gitee-uploader&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;lastSync&#34;</span><span class="p">:</span> <span class="s2">&#34;2020-04-30 01:41:13&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;picgo-plugin-github-plus&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;lastSync&#34;</span><span class="p">:</span> <span class="s2">&#34;2020-04-07 11:09:08&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;picgoPlugins&#34;</span><span class="p">:</span> <span class="p">{}</span> <span class="c1">// 为插件预留
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
