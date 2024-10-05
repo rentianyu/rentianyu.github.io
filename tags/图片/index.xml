@@ -1,0 +1,170 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>图片 - 标签 - 小贝塔教程资源</title>
+        <link>https://blog.xbta.cc/tags/%E5%9B%BE%E7%89%87/</link>
+        <description>图片 - 标签 - 小贝塔教程资源</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1782898491@qq.com (小贝塔)</managingEditor>
+            <webMaster>1782898491@qq.com (小贝塔)</webMaster><lastBuildDate>Wed, 11 Nov 2020 10:35:19 &#43;0800</lastBuildDate><atom:link href="https://blog.xbta.cc/tags/%E5%9B%BE%E7%89%87/" rel="self" type="application/rss+xml" /><item>
+    <title>记一次爬取图片的历程</title>
+    <link>https://blog.xbta.cc/011_pa_netbian/</link>
+    <pubDate>Wed, 11 Nov 2020 10:35:19 &#43;0800</pubDate>
+    <author>小贝塔</author>
+    <guid>https://blog.xbta.cc/011_pa_netbian/</guid>
+    <description><![CDATA[<h2 id="一前言">一、前言</h2>
+<p>​		<a href="http://www.netbian.com" target="_blank" rel="noopener noreffer ">彼岸桌面</a> 是一个很好的收集壁纸的网站，壁纸高清，我很喜欢，并且还赞助了会员。这次的爬取对象就是它了。</p>
+<p>​		这次的流程是先写爬虫脚本，然后放在<code>VPS</code>上爬取地址，最后用<code>COLAB</code>下载。</p>
+<h2 id="二网站分析与确定爬取流程">二、网站分析与确定爬取流程</h2>
+<ol>
+<li>
+<p>分析网页网址</p>
+<p>​	比如，我想爬取 <a href="http://www.netbian.com/fengjing" target="_blank" rel="noopener noreffer ">风景</a> 类的壁纸，先进入风景专区，然后点击一张图片的地址，发现此时的图片预览图是原图！！！那就可以确定爬取流程了。先以一张图为例。</p>
+<p>1.1 找到图片分类网址</p>
+<p><code>http://www.netbian.com/fengjing</code></p>
+<p></p>
+<p>1.2 找到图片介绍地址和真实地址</p>
+<p>图片介绍地址：<code>http://www.netbian.com/desk/23006.htm</code></p>
+<p>图片真实地址：<code>http://img.netbian.com/file/2020/1108/1da1eab002604a8adcc33d8103b5758d.jpg</code></p>
+<p></p>
+</li>
+<li>
+<p>确定爬取流程</p>
+<p>2.1 风景分类界面获取介绍图片代号</p>
+<p>2.2 图片介绍界面获取图片真实地址</p>
+</li>
+</ol>
+<h2 id="三写脚本">三、写脚本</h2>
+<p>​	以下为获取<a href="http://www.netbian.com/fengjing/index_2.htm" target="_blank" rel="noopener noreffer ">风景</a>下图片链接的<code>bash</code>脚本，第一页的图片请单独处理。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># 以下代码只处理第2-203页，第一页的图片请自行处理</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 定义种类kind为fengjing</span>
+</span></span><span class="line"><span class="cl"><span class="nv">kind</span><span class="o">=</span>fengjing
+</span></span><span class="line"><span class="cl"><span class="c1"># 定义页码page为2 3 .. 203</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> page in <span class="k">$(</span>seq <span class="m">2</span> 203<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># 拼接种类页面链接kind_link</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">kind_link</span><span class="o">=</span><span class="s2">&#34;http://www.netbian.com/</span><span class="nv">$kind</span><span class="s2">/index_</span><span class="nv">$page</span><span class="s2">.htm&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># 获取该页所有图片编号pic_num_list</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">pic_num_list</span><span class="o">=</span><span class="k">$(</span>wget -qO- <span class="nv">$kind_link</span> <span class="p">|</span> grep -aoP <span class="s2">&#34;(?&lt;=href=\&#34;/desk/).*?(?=.htm)&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># 定义图片编号pic_num</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> pic_num in <span class="nv">$pic_num_list</span>
+</span></span><span class="line"><span class="cl">	<span class="k">do</span>
+</span></span><span class="line"><span class="cl">		<span class="c1"># 拼接图片信息页面链接pic_info_link</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">pic_info_link</span><span class="o">=</span>http://www.netbian.com/desk/<span class="nv">$pic_num</span>.htm
+</span></span><span class="line"><span class="cl">        <span class="c1"># 获取图片地址pic_link</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">pic_link</span><span class="o">=</span><span class="k">$(</span>wget -qO- <span class="nv">$pic_info_link</span> <span class="p">|</span> grep -aoP -m <span class="m">1</span> <span class="s2">&#34;http://img.netbian.com/file/20.*jpg(?=\&#34; alt)&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 打印图片地址</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="nv">$pic_link</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 保存图片地址到文件</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="nv">$pic_link</span> &gt;&gt; <span class="si">${</span><span class="nv">kind</span><span class="si">}</span>_down.txt
+</span></span><span class="line"><span class="cl">    <span class="k">done</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><code>grep -a</code>可以查找二进制中的文字</li>
+<li><code>grep -m 1</code>只保留第一次匹配</li>
+<li>用<code>wget -qO-</code>而不用<code>curl -s</code>的原因是之后的<code>grep -m 1</code>查找到之后会堵塞通道造成错误</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h2 id="四下载图片">四、下载图片</h2>
+<p>​	因为完全下载所需的空间需要几G之上，我的<code>VPS</code>不足以持，因此就用到了Google家的<code>COLAB</code></p>
+<ol>
+<li>
+<p>将爬取的下载链接上传到 <a href="https://drive.google.com" target="_blank" rel="noopener noreffer ">谷歌网盘</a> 的某个目录</p>
+</li>
+<li>
+<p>登录 <a href="https://colab.research.google.com" target="_blank" rel="noopener noreffer ">COLAB</a> 并新建笔记本，按照下图配置，然后依次运行即可</p>
+</li>
+</ol>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>注意<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><code>COLAB</code> 中 <code>!</code>开头表示运行<code>SHELL</code>命令</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 挂载谷歌硬盘</span>
+</span></span><span class="line"><span class="cl">from google.colab import drive
+</span></span><span class="line"><span class="cl">drive.mount<span class="o">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装aria2</span>
+</span></span><span class="line"><span class="cl">!sudo apt install uget aria2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># cd 到文件夹</span>
+</span></span><span class="line"><span class="cl">!cd <span class="s2">&#34;/content/drive/Shared drives/1/fj&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">!aria2c -i fengjing_down.txt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">!zip fengjing.zip *
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p></p>
+<h2 id="五成品及反思">五、成品及反思</h2>
+<ul>
+<li>
+<p>成品：<a href="https://file.beita.workers.dev/2:/%E5%85%B6%E4%BB%96%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6/" target="_blank" rel="noopener noreffer ">彼岸桌面(http://netbian.com)_风景图片打包.zip</a></p>
+</li>
+<li>
+<p>此次抓取中，有几点需要注意，</p>
+</li>
+</ul>
+<ol>
+<li>下载网页源码之后可以找到文字，但用<code>grep</code>找不到，就是二进制文件的问题，加参数<code>-a</code>即可。</li>
+<li><code>grep</code>找到多个匹配，加参数<code>-m </code>即可只保留第一个。</li>
+<li><code>curl</code>和<code>grep</code>连用有时会导致通道堵塞，使用<code>wget -qO-</code>全下载之后再<code>grep</code>即可。</li>
+<li><code>COLAB</code>中使用shell命令极大的增加了能力，并且可以挂载谷歌网盘，极大得方便文件的传输。</li>
+</ol>]]></description>
+</item>
+</channel>
+</rss>
