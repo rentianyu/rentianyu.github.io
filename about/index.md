@@ -27,4 +27,4 @@
 
 > 最后的我却渐行渐远
 
-![远方](https://cdn.jsdelivr.net/gh/rentianyu/media@main/img/PicList/远方.jpg)
+![远方](https://cdn.jsdelivr.net/gh/rentianyu/media@main//img/PicList/远方.jpg)
