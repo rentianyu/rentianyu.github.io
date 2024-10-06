@@ -7,7 +7,7 @@
 | 平台 | 地址 |
 | :- | :- |
 | 微信公众号 | 小贝塔教程资源                                               |
-| 导航网站 | [https://xbta.tk](https://xbta.tk/) |
+| 导航网站 | [https://xbta.cc](https://xbta.cc/) |
 | 博客网站 | [https://blog.xbta.cc](https://blog.xbta.cc/) |
 | 网盘 | [https://od.xbta.cc](https://od.xbta.cc/) |
 | Github | [https://github.com/rentianyu](https://github.com/rentianyu) |
