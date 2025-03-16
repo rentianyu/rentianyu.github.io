@@ -117,3 +117,5 @@ drive.mount('/content/drive')
 2.  `grep`找到多个匹配，加参数`-m `即可只保留第一个。
 3.  `curl`和`grep`连用有时会导致通道堵塞，使用`wget -qO-`全下载之后再`grep`即可。
 4.  `COLAB`中使用shell命令极大的增加了能力，并且可以挂载谷歌网盘，极大得方便文件的传输。
+
+ [13015计算机系统原理-速记宝典.pdf](..\..\..\..\..\..\..\Desktop\计算机课程\13015计算机系统原理-速记宝典.pdf)  [灵感来源于：rwkgygsing-box-yg.zip](..\..\..\..\..\..\..\Desktop\灵感来源于：rwkgygsing-box-yg.zip) 

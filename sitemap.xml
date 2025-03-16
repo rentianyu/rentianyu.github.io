@@ -2,20 +2,23 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://blog.xbta.cc/categories/</loc><lastmod>2020-11-27T22:42:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.xbta.cc/posts/</loc><lastmod>2020-11-27T22:42:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.xbta.cc/017/</loc><lastmod>2025-03-16T21:32:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.xbta.cc/categories/</loc><lastmod>2025-03-16T21:32:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.xbta.cc/posts/</loc><lastmod>2025-03-16T21:32:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.xbta.cc/tags/</loc><lastmod>2025-03-16T21:32:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.xbta.cc/tags/%E5%B7%A5%E5%85%B7/</loc><lastmod>2025-03-16T21:32:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.xbta.cc/categories/%E7%94%9F%E6%B4%BB/</loc><lastmod>2025-03-16T21:32:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://blog.xbta.cc/</loc><lastmod>2025-03-16T21:32:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://blog.xbta.cc/tags/shell/</loc><lastmod>2020-11-27T22:42:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.xbta.cc/tags/</loc><lastmod>2020-11-27T22:42:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.xbta.cc/tags/%E5%AE%89%E5%8D%93/</loc><lastmod>2020-11-27T22:42:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.xbta.cc/categories/%E6%95%99%E7%A8%8B/</loc><lastmod>2020-11-27T22:42:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.xbta.cc/tags/%E6%8F%90%E5%8F%96/</loc><lastmod>2020-11-27T22:42:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.xbta.cc/016_intent/</loc><lastmod>2020-11-27T22:42:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.xbta.cc/</loc><lastmod>2020-11-27T22:42:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.xbta.cc/011_pa_netbian/</loc><lastmod>2020-11-11T10:35:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.xbta.cc/tags/%E7%88%AC%E8%99%AB/</loc><lastmod>2020-11-11T10:35:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.xbta.cc/tags/%E5%9B%BE%E7%89%87/</loc><lastmod>2020-11-11T10:35:19&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://blog.xbta.cc/tags/%E5%8F%A5%E5%AD%90/</loc><lastmod>2020-08-14T17:21:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.xbta.cc/categories/%E5%8F%A5%E5%AD%90/</loc><lastmod>2020-08-14T17:21:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://blog.xbta.cc/tags/%E5%8F%A5%E5%AD%90/</loc><lastmod>2020-08-14T17:21:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.xbta.cc/006_sentence_01/</loc><lastmod>2020-08-14T17:21:10&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.xbta.cc/tags/installation/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://blog.xbta.cc/about/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
